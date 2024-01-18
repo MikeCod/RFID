@@ -38,7 +38,7 @@ RFID actually use a large frequency bands
 | UHF-SHF: 2450–5800 MHz | ISM band | 1 – 2 m | 802.11 WLAN, Bluetooth standards |
 *[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
 
-NFC is rooted in RFID, and Smartcard from NFC.
+NFC is rooted in RFID, and Smartcard in NFC.
 ```
 ╔════════╗     ╔═══════╗     ╔═════════════╗
 ║  RFID  ╠════>║  NFC  ╠════>║  Smartcard  ║
@@ -57,7 +57,7 @@ NFC is made safer by its scheme, supporting anticollisions, and various features
 #### Smartcards
 
 Smartcard, in addition to the features above, provides **authentication**.
-Integrating a firmware on its chip, Smartcards provide authentication, that is, __not only saying "who you are", but "prove that you really are you"__.
+Integrating a firmware on its chip, Smartcards provide authentication, that is, __not only saying who you are, but prove that you really are you__.
 
 
 ## Contributors
