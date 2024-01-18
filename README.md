@@ -57,8 +57,8 @@ NFC is made safer by its scheme, supporting anticollisions, and various features
 
 #### Smartcards
 
-Smartcard, in addition to the features above, provides **authentication**.
-Integrating a firmware on its chip, Smartcards provide authentication, that is, __not only saying who you are, but prove that you really are you__.
+Smartcard, in addition to the features above, provides **authentication** integrating a firmware on its chip ;
+That is, __not only saying who you are, but prove that you really are you__.
 
 
 ## Contributors
