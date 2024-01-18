@@ -1,0 +1,10 @@
+[
+	{
+		"name": "target-area",
+		"text": "What kind of area would you secure ?",
+		"answers": [
+			"Transactions or event tickets",
+			"Company"
+		]
+	}
+]

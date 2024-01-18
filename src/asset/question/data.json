@@ -1,0 +1,11 @@
+[
+	{
+		"name": "target-data",
+		"section": "Find the most suitable protocol",
+		"text": "What kind of data would you protect ?",
+		"answers": [
+			"Computer/Operating system",
+			"Cryptocurrency"
+		]
+	}
+]

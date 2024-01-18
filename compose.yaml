@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    build:
+      context: .
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+    networks:
+      - mongo
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongo:/usr/src/app
+    networks:
+      - mongo
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    volumes:
+      - ./mongo:/usr/src/app
+    depends_on:
+      - mongodb
+    networks:
+      - mongo
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    environment:
+    - ME_CONFIG_MONGODB_SERVER=mongodb
+    - ME_CONFIG_MONGODB_AUTH_DATABASE=pfe
+    - ME_CONFIG_MONGODB_AUTH_USERNAME=
+    - ME_CONFIG_MONGODB_AUTH_PASSWORD=
+networks:
+  mongo:
+    driver: overlay
