@@ -63,8 +63,8 @@ Integrating a firmware on its chip, Smartcards provide authentication, that is, 
 
 ## Contributors
 
-[Aidasaoudi](https://github.com/Aidasaoudi)
-[Rikinaze Madi Tabibou](https://github.com/Aidasaoudi)
+- [Aidasaoudi](https://github.com/Aidasaoudi)
+- [Rikinaze Madi Tabibou](https://github.com/Aidasaoudi)
 
 
 ## License
