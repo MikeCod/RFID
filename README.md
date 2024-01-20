@@ -3,6 +3,7 @@
 ## Overview
 
 This project aims to find the most suitable RFID technology for your use case, or alternatives, in addition to explain why your current solution may not be appropriate.
+
 Moreover, a documentation is also available.
 
 
@@ -39,11 +40,11 @@ RFID is actually on many frequency bands.
 
 *[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
 
-NFC is rooted in RFID, and Smartcard in NFC.
+NFC is rooted in RFID, and Contactless Smartcard in NFC.
 ```
-╔════════╗     ╔═══════╗     ╔═════════════╗
-║  RFID  ╠════>║  NFC  ╠════>║  Smartcard  ║
-╚════════╝     ╚═══════╝     ╚═════════════╝
+╔════════╗     ╔═══════╗     ╔═════════════════════════╗
+║  RFID  ╠════>║  NFC  ╠════>║  Contactless Smartcard  ║
+╚════════╝     ╚═══════╝     ╚═════════════════════════╝
 ```
 
 #### NFC
@@ -55,16 +56,27 @@ NFC is designed to be more secure, not only provide **identification** :
 NFC is made safer by its scheme, supporting anticollisions, and various features by manufacturers (although it's not very "secure").
 
 
-#### Smartcards
+#### Contactless Smartcards
 
-Smartcard, in addition to the features above, provides **authentication** integrating a firmware on its chip ;
+Contactless Smartcard, in addition to the features above, provides **authentication** integrating a firmware on its chip ;
 That is, __not only saying who you are, but prove that you really are you__.
 
 
 ## Contributors
 
+||||
+|-|-|-|
+| ![Aidasaoudi](https://avatars.githubusercontent.com/u/113185371?v=4&s=144){:height="144px" width="144px"} | ![Rikimadi](https://avatars.githubusercontent.com/u/63343872?v=4&s=144){:height="144px" width="144px"} | ![Mailysss](https://avatars.githubusercontent.com/u/79757319?v=4&s=144){:height="144px" width="144px"}  |
+| Aidasaoudi | Rikimadi | Mailysss |
+| ![MikeCod](https://avatars.githubusercontent.com/u/113607960?v=4&s=144){:height="144px" width="144px"} | ![Agrafes](https://avatars.githubusercontent.com/u/92798770?v=4&s=144){:height="144px" width="144px"} | ![badrou0896](https://avatars.githubusercontent.com/u/113607960?v=4&s=144){:height="144px" width="144px"} |
+| Eternal Dreamer | Agrafes | Badreddine |
+
 - [Aidasaoudi](https://github.com/Aidasaoudi)
-- [Rikinaze Madi Tabibou](https://github.com/Aidasaoudi)
+- [Rikimadi](https://github.com/Rikimadi)
+- [badrou0809](https://github.com/badrou0809)
+- [Agrafes](https://github.com/Agrafes)
+- [Mailysss](https://github.com/Mailysss)
+- [Eternal Dreamer](https://github.com/MikeCod)
 
 
 ## License
