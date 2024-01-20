@@ -20,7 +20,7 @@ $ docker-compose up --build
 RFID (Radio Frequency Identification) technology designate, as the name suggest, a protocol that permits to identify someone or something.
 
 ### Where are RFID used ?
-Badreddine
+
 We use RFID technologies very often in our daily life, without us realizing it.
 - Building or corporate pass
 - Contactless payment
