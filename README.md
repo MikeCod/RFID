@@ -20,7 +20,7 @@ $ docker-compose up --build
 RFID (Radio Frequency Identification) technology designate, as the name suggest, a protocol that permits to identify someone or something.
 
 ### Where are RFID used ?
-
+Badreddine
 We use RFID technologies very often in our daily life, without us realizing it.
 - Building or corporate pass
 - Contactless payment
@@ -66,18 +66,8 @@ That is, __not only saying who you are, but prove that you really are you__.
 
 ||||
 |-|-|-|
-| ![Aidasaoudi](https://avatars.githubusercontent.com/u/113185371?v=4&s=144){:height="144px" width="144px"} | ![Rikimadi](https://avatars.githubusercontent.com/u/63343872?v=4&s=144){:height="144px" width="144px"} | ![Mailysss](https://avatars.githubusercontent.com/u/79757319?v=4&s=144){:height="144px" width="144px"}  |
-| Aidasaoudi | Rikimadi | Mailysss |
-| ![MikeCod](https://avatars.githubusercontent.com/u/113607960?v=4&s=144){:height="144px" width="144px"} | ![Agrafes](https://avatars.githubusercontent.com/u/92798770?v=4&s=144){:height="144px" width="144px"} | ![badrou0896](https://avatars.githubusercontent.com/u/113607960?v=4&s=144){:height="144px" width="144px"} |
-| Eternal Dreamer | Agrafes | Badreddine |
-
-- [Aidasaoudi](https://github.com/Aidasaoudi)
-- [Rikimadi](https://github.com/Rikimadi)
-- [badrou0809](https://github.com/badrou0809)
-- [Agrafes](https://github.com/Agrafes)
-- [Mailysss](https://github.com/Mailysss)
-- [Eternal Dreamer](https://github.com/MikeCod)
-
+| [<img src="https://avatars.githubusercontent.com/u/113185371?v=4" alt="Aidasaoudi" width="72" height="72" /><p>Aidasaoudi</p>](https://github.com/Aidasaoudi) | [<img src="https://avatars.githubusercontent.com/u/63343872?v=4" alt="Rikimadi" width="72" height="72" /><p>Rikimadi</p>](https://github.com/Rikimadi) | [<img src="https://avatars.githubusercontent.com/u/79757319?v=4" alt="Mailysss" width="72" height="72" /><p>Mailysss</p>](https://github.com/Mailysss) |
+| [<img src="https://avatars.githubusercontent.com/u/43148386?v=4" alt="MikeCod" width="72" height="72" /><p>Eternal Dreamer</p>](https://github.com/MikeCod) | [<img src="https://avatars.githubusercontent.com/u/92798770?v=4" alt="BAD0896" width="72" height="72" /><p>Agrafes</p>](https://github.com/Agrafes) | [<img src="https://avatars.githubusercontent.com/u/113607960?v=4" alt="BAD0896" width="72" height="72" /><p>BAD0896</p>](https://github.com/badrou0809) |
 
 ## License
 
