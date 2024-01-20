@@ -14,12 +14,11 @@ $ docker swarm init --advertise-addr 127.0.0.1
 $ docker-compose up --build
 ```
 
-## FAQ
-### What are RFID technologies ?
+## What are RFID technologies ?
 
 RFID (Radio Frequency Identification) technology designate, as the name suggest, a protocol that permits to identify someone or something.
 
-### Where are RFID used ?
+## Where are RFID used ?
 
 We use RFID technologies very often in our daily life, without us realizing it.
 - Building or corporate pass
@@ -27,7 +26,7 @@ We use RFID technologies very often in our daily life, without us realizing it.
 - Public transports
 - ...
 
-### What type of RFID exist ?
+## What type of RFID exist ?
 
 RFID is actually on many frequency bands.
 | Band | Regulations | Range | Cas d’utilisation |
@@ -47,16 +46,16 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 ╚════════╝     ╚═══════╝     ╚═════════════════════════╝
 ```
 
-#### NFC
+## NFC
 
-NFC is designed to be more secure, not only provide **identification** :
+NFC is designed to be more secure. In addition to provide **identification** :
 - **Data storage** (up to 4kib) *RFID data is on a few bytes*
 - **Request treatments**
 
 NFC is made safer by its scheme, supporting anticollisions, and various features by manufacturers (although it's not very "secure").
 
 
-#### Contactless Smartcards
+## Contactless Smartcards
 
 Contactless Smartcard, in addition to the features above, provides **authentication** integrating a firmware on its chip ;
 That is, __not only saying who you are, but prove that you really are you__.
