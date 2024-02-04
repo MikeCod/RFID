@@ -27,7 +27,7 @@ export const Input = _props => {
 			addProps.onBlur = ({ target: { value } }) => setGood(value.length === 0 || (profile || {})[_props.name] === value ? null : new RegExp(props.pattern, "s").test(value));
 		if (typeof _props.onChange === "function")
 			addProps.onChange = ({ target: { value } }) => setGood(value.length === 0 || (profile || {})[_props.name] === value ? null : _props.onChange(value));
-		setProps(addProps)
+		setProps(addProps);
 	}, [_props]);
 
 	return (

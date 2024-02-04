@@ -42,9 +42,9 @@
 
 * {
 	font-family: Ubuntu, Arial, Helvetica, sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	color: var(--text-standard);
-	transition-duration: 700ms;
+	transition-duration: 480ms;
 }
 
 .sun * {
@@ -66,12 +66,14 @@ input:focus {
 
 h1 {
 	font-size: 28pt;
+	font-weight: 600;
 	margin-top: 60px;
 	margin-bottom: 20px;
 	color: var(--title-1);
 }
 
 h2 {
+	font-weight: 600;
 	font-size: 24pt;
 	margin-top: 40px;
 	margin-bottom: 16px;
@@ -86,6 +88,22 @@ p {
 .carousel__slide-focus-ring {
 	display: none !important;
 	outline-width: 0 !important;
+}
+
+.carousel__next-button, .carousel__back-button {
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 200px;
+	border-radius: 999px;
+	padding: 16px 0;
+}
+
+.carousel__back-button {
+	border: 2px solid var(--text-standard);
+}
+
+.carousel__next-button {
+	background-color: var(--icon-ok);
 }
 
 header {
@@ -140,6 +158,7 @@ form a {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 18px;
+	font-weight: 900;
 }
 
 header>div:not(#tab) a,
