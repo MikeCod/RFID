@@ -17,13 +17,13 @@ const Question = ({ text, dependsOn, show, name, answers, selected, onChange }) 
 		show &&
 		<FadeIn>
 			<div className={`mb-8 ${dependsOn !== undefined ? "ml-12" : ""}`}>
-				<p className="text-lg bold mb-2">{text}</p>
+				<p className="text-lg bold mb-2 font-bold">{text}</p>
 				<div className="flex-col ml-8 max-w-96">
 					{
 						answers
 							.map((ans, index) => (
 								<p
-									className={`mt-1 px-8 py-2 rounded-full w-full cursor-pointer border ${selected === index ? "bg-green-700 text-white border-green-200" : "border-green-200/40"}`}
+									className={`mt-1 px-8 py-2 rounded-full w-full font-semibold cursor-pointer border ${selected === index ? "bg-green-700 text-white border-green-200" : "border-green-200/40"}`}
 									onClick={() => onChange(index)}
 									key={index}
 								>
@@ -72,7 +72,7 @@ export default function ({ profile: { form } }) {
 											className="w-screen min-h-screen border-l border-green-600 pl-8 pr-40"
 											key={sectionIndex}
 										>
-											<h1>{title}</h1>
+											<h1 className="capitalize">{title}</h1>
 											{
 												questions.map((item, index, arr) => (
 													<Question
@@ -92,18 +92,19 @@ export default function ({ profile: { form } }) {
 									))
 							}
 							<Slide index={2} className="w-screen border-l border-cyan-600 pl-8">
-								{
+							<h1 className="uppercase">{
 									(() => {
 										switch (answers.target_1) {
 											case 0:
-												return <h1>Secure data</h1>;
+												return "Secure data";
 											case 1:
-												return <h1>Secure an area</h1>;
+												return "Secure an area";
 											default:
 												return null;
 										}
 									})()
 								}
+								</h1>
 								{
 									(() => {
 										switch (answers.target_1) {
