@@ -131,7 +131,7 @@ header+main {
 }
 
 #name {
-	width: 220px;
+	width: 200px !important;
 	font-size: 20pt;
 	font-weight: 300;
 	color: var(--text-standard);
@@ -179,6 +179,7 @@ form a {
 	color: var(--text);
 	transition-duration: 400ms;
 	border-bottom: 1px solid transparent;
+	margin:0 4px;
 }
 
 #tab a:hover {
@@ -207,7 +208,7 @@ form a {
 
 #head-sign a {
 	width: 8vw;
-	min-width: 100px;
+	min-width: 160px;
 	margin-left: 4px;
 }
 

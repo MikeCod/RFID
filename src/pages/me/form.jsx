@@ -44,6 +44,8 @@ export default function ({ profile: { form } }) {
 			.reduce((prev, curr) => ({ ...prev, [curr.name]: -1 }), {})
 	);
 	const [filled, setFilled] = useState(0);
+	const [position, setPosition] = useState(0);
+	const [positionMax, setPositionMax] = useState(0);
 
 	return (
 		<div id="me">
@@ -129,8 +131,29 @@ export default function ({ profile: { form } }) {
 							</Slide>
 						</Slider>
 						<div className="flex-row">
-							<ButtonBack>Back</ButtonBack>
-							<ButtonNext className={!filled ? "opacity-40" : ""} disabled={!filled} onClick={() => setFilled(false)}>Next</ButtonNext>
+							<ButtonBack
+								className={position === 0 ? "opacity-40" : ""}
+								disabled={position === 0}
+								onClick={() => {
+									setPosition(position - 1);
+									setFilled(true);
+								}}
+							>
+								Back
+							</ButtonBack>
+							<ButtonNext
+								className={!filled ? "opacity-40" : ""}
+								disabled={!filled}
+								onClick={() => {
+									if ((position + 1) >= positionMax) {
+										setFilled(false);
+										setPositionMax(position + 1);
+									}
+									setPosition(position + 1);
+								}}
+							>
+								Next
+							</ButtonNext>
 						</div>
 					</CarouselProvider>
 				</form>
