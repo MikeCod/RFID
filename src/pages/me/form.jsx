@@ -1,16 +1,14 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import { useEffect, useState, useContext } from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Header } from "@component/header";
-import { Profile } from "@utils/profile";
+import { Profile } from "@cutils";
 
 import questions_generic from "@asset/question/generic.json";
 import questions_area from "@asset/question/area.json";
 import questions_data from "@asset/question/data.json";
 
-export { getServerSideProps } from "@utils/profile-server";
+export { getServerSideProps } from "@sutils";
 
 
 const Question = ({ text, dependsOn, show, name, answers, selected, onChange }) => {
