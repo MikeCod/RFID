@@ -4,6 +4,30 @@
 			"@asset/*": [
 				"./src/asset/*"
 			],
+			"@component": [
+				"./src/component/index.js"
+			],
+			"@cutils": [
+				"./src/utils/client/index.js"
+			],
+			"@sutils": [
+				"./src/utils/server/index.js"
+			],
+			"@component/*": [
+				"./src/component/*"
+			],
+			"@cutils/*": [
+				"./src/utils/client/*"
+			],
+			"@sutils/*": [
+				"./src/utils/server/*"
+			],
+			"@utils": [
+				"./src/utils/index.js"
+			],
+			"@utils/*": [
+				"./src/utils/*"
+			],
 			"@/*": [
 				"./src/*"
 			]
