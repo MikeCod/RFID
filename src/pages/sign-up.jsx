@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import bodyParser from "body-parser";
-import { promisify } from "util";
+import React from 'react';
 import { Inter } from 'next/font/google'
 import { SHA3 } from "sha3";
 import Cookies from 'cookies';
@@ -11,15 +9,13 @@ import * as Check from "@utils";
 
 const inter = Inter({ subsets: ['latin'] });
 
-const getBody = promisify(bodyParser.urlencoded());
-
 
 export async function getServerSideProps({ req, res }) {
 	try {
 		if (req.method !== "POST")
 			return { props: {} };
 
-		await getBody(req, res);
+		await Server.getBody(req, res);
 		console.log(req.body);
 		let { name, email, phone, password } = req?.body || {};
 		name = name?.trim();

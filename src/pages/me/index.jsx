@@ -1,6 +1,4 @@
 import { useContext, useEffect } from 'react';
-import bodyParser from "body-parser";
-import { promisify } from "util";
 import { ObjectId } from "mongodb";
 import Cookies from 'cookies';
 
@@ -8,8 +6,6 @@ import { Profile } from '@cutils';
 import { Header, Input } from '@component';
 import * as Check from "@utils/check";
 import * as Server from "@sutils";
-
-const getBody = promisify(bodyParser.urlencoded());
 
 export async function getServerSideProps(ctx) {
 	const result = await Server.getSession(ctx);
@@ -21,7 +17,7 @@ export async function getServerSideProps(ctx) {
 		const { profile } = props;
 		const { req, res } = ctx;
 
-		await getBody(req, res);
+		await Server.getBody(req, res);
 		console.log(req.body);
 		let { _method, name, email, phone, password, newPassword } = req?.body || {};
 
@@ -93,12 +89,6 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function ({ profile }) {
-	const [_, setProfile] = useContext(Profile);
-
-	useEffect(() => {
-		setProfile(profile);
-	}, []);
-
 	return (
 		<div id="me">
 			<Header>

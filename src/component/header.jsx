@@ -21,13 +21,13 @@ function ThemeSelect() {
 				)
 			}
 		</div>
-	)
+	);
 }
 
 export const Header = ({ children, profile = true }) => {
 	return (
 		<header>
-			<a id="name" href="/"><img src="/logo.svg" />NFC Auditor</a>
+			<a id="name" href="/"><img src="/logo.svg" />RFID Auditor</a>
 			<div id="tab">{children}</div>
 			<div>
 			<ThemeSelect />

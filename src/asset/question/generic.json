@@ -62,6 +62,14 @@
 				"Jewel",
 				"I don't know / Nothing"
 			]
+		},
+		{
+			"name": "comparison",
+			"text": "Would you like a detailled comparison between all available technologies ?",
+			"answers": [
+				"Yes",
+				"No"
+			]
 		}
 	],
 	"What purpose": [

@@ -1,4 +1,6 @@
 import Cookies from "cookies";
+import bodyParser from "body-parser";
+import { promisify } from "util";
 import { validate, db } from ".";
 
 
@@ -43,3 +45,5 @@ export async function getServerSideProps({ req, res, resolvedUrl }) {
 };
 
 export const getSession = getServerSideProps;
+
+export const getBody = promisify(bodyParser.urlencoded());

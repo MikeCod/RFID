@@ -35,7 +35,8 @@
 	--moon: #fcc;
 }
 
-.light, .dark {
+.light,
+.dark {
 	background: var(--background-soft);
 	min-height: 100vh;
 }
@@ -48,11 +49,11 @@
 }
 
 .sun * {
-	fill:var(--sun);
+	fill: var(--sun);
 }
 
 .moon * {
-	fill:var(--moon);
+	fill: var(--moon);
 }
 
 ::placeholder {
@@ -90,7 +91,8 @@ p {
 	outline-width: 0 !important;
 }
 
-.carousel__next-button, .carousel__back-button {
+.carousel__next-button,
+.carousel__back-button {
 	text-transform: uppercase;
 	font-weight: bold;
 	width: 200px;
@@ -104,6 +106,8 @@ p {
 
 .carousel__next-button {
 	background-color: var(--icon-ok);
+	margin-left: 2px;
+	color: white;
 }
 
 header {
@@ -117,7 +121,8 @@ header {
 }
 
 header,
-header>*, header #head-sign {
+header>*,
+header #head-sign {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -148,7 +153,8 @@ header+main {
 	border-radius: 999px;
 	margin-right: 2px;
 }
-#theme > svg:hover {
+
+#theme>svg:hover {
 	cursor: pointer;
 }
 
@@ -179,7 +185,7 @@ form a {
 	color: var(--text);
 	transition-duration: 400ms;
 	border-bottom: 1px solid transparent;
-	margin:0 4px;
+	margin: 0 4px;
 }
 
 #tab a:hover {

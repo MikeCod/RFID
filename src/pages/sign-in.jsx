@@ -1,6 +1,3 @@
-
-import bodyParser from "body-parser";
-import { promisify } from "util";
 import { Inter } from 'next/font/google'
 import Cookies from 'cookies';
 import { SHA3 } from "sha3";
@@ -9,8 +6,6 @@ import * as Server from "@sutils";
 import { Header } from "@component/header";
 
 const inter = Inter({ subsets: ['latin'] });
-
-const getBody = promisify(bodyParser.urlencoded());
 
 
 export async function getServerSideProps({ req, res }) {
@@ -22,7 +17,7 @@ export async function getServerSideProps({ req, res }) {
 			return { props: {} };
 		}
 
-		await getBody(req, res);
+		await Server.getBody(req, res);
 		console.log(req.body);
 		let { email, password } = req?.body || {};
 		email = email?.trim();
