@@ -1,11 +1,39 @@
-[
+{ 
+	"Acces physique":[
 	{
-		"name": "target-area",
-		"text": "What kind of area do you intend to secure ?",
+		"name": "proto-00",
+		"text": "How many doors do you have?",
 		"answers": [
-			"Company (private)",
-			"Company services (used by customers) (e.g. public transports)",
-			"Event tickets"
+			"1-10",
+			">10"
+		]
+	},
+	{
+		"dependsOn": [
+			"proto-00",
+			0
+		],
+		"name": "proto-01",
+		"text": "Critical Location",
+		"answers":[
+			"1-10",
+			">10"
+		]
+	},
+	{
+		"dependsOn": [
+			"proto-01",
+			0
+		],
+		"name": "proto-02",
+		"text": "Which type of security",
+		"answers":[
+			"Physical Barriers and Turnstiles with Badge",
+			"Granties with badge",
+			"Free admission"
 		]
 	}
+	
+
 ]
+}
