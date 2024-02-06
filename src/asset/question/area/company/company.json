@@ -172,6 +172,22 @@
 				"permissions",
 				4
 			],
+			"name": "permissions-validity",
+			"text": "Badge validity period",
+			"answers": [
+				"Indefinite",
+				"Special Events",
+				"Contract Maturity",
+				"Periodic Renewal",
+				"Temporary validity"
+	
+			]
+		},
+		{
+			"dependsOn": [
+				"permissions",
+				5
+			],
 			"name": "permissions-revokation",
 			"text": "There is Badge Revocation Procedure?",
 			"answers": [
