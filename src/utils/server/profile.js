@@ -32,7 +32,7 @@ export async function getServerSideProps({ req, res, resolvedUrl }) {
 	catch (error) {
 		console.log(error);
 		cookies.set('sess');
-		if (resolvedUrl !== "/sign-in") {
+		if (resolvedUrl !== "/sign-in" && resolvedUrl.startsWith("/me")) {
 			return {
 				redirect: {
 					permanent: false,

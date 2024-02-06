@@ -1,7 +1,6 @@
-import { Inter } from 'next/font/google'
 import { Header } from '@component';
 
-const inter = Inter({ subsets: ['latin'] });
+export { getServerSideProps } from "@sutils";
 
 
 export default function Home() {

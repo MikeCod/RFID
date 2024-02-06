@@ -61,7 +61,8 @@ export default function () {
 	const [positionMax, setPositionMax] = useState(0);
 
 	const isEnd = () => (
-		position > questionsFormatted.length
+		(position - 1) > questionsFormatted.length &&
+		filled
 	);
 
 
