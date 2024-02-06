@@ -54,3 +54,4 @@ services:
 networks:
   mongo:
     driver: overlay
+    attachable: true
