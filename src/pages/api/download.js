@@ -12,6 +12,7 @@ export default async function (req, res) {
 	try {
 		const pdfDoc = await PDFDocument.create();
 		const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+		const helveticaBoldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 		let textList = Server.generateMarkdownText(result.props.profile).split("\n").filter(l => typeof l === "string" && l.length !== 0);
 
 		for (let i = 0; i < textList.length;) {
@@ -30,6 +31,7 @@ export default async function (req, res) {
 						maxWidth: width - 90,
 						color: rgb(0.1, 0.1, 0.1)
 					};
+					console.log(text);
 					switch (textList[i][0]) {
 						case "#":
 							text = text.substring(spacePos + 1);
@@ -42,14 +44,25 @@ export default async function (req, res) {
 							text = text.substring(spacePos + 1);
 							options.lineHeight = 14;
 							options.color = rgb(0.05, 0.1, 0.1);
+							// page.drawText(text, options);
+							break;
+						case "*":
+							const boldPos = text.substring(3).indexOf("**");
+							const textBold = text.substring(2, boldPos+2);
+							text = text.substring(boldPos + 6);
+
+							options.color = rgb(0.05, 0.1, 0.1);
+							page.drawText(textBold, { ...options, font: helveticaBoldFont });
+							options.x += textBold.length * (options.size/2);
+							options.maxWidth -= options.x;
 							break;
 						default:
 							break;
 					}
 					page.drawText(text, options);
-					const linesCount = parseInt(text.length/(options.size));
+					const linesCount = parseInt((text.length) / (options.size*2));
 					console.log(linesCount);
-					j += 20*linesCount;
+					j += 8 * linesCount;
 				}
 				++i;
 			}

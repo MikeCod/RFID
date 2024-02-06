@@ -2,9 +2,9 @@ export function generateMarkdownText(formData) {
 	let markdownText = `
 # USER INFORMATION
 
-- **Name:** ${formData.name}
-- **Email:** ${formData.email}
-- **Phone:** ${formData.phone}
+**Name:** ${formData.name}
+**Email:** ${formData.email}
+**Phone:** ${formData.phone}
 `;
 	if (formData.form.doors === 1 && formData.form.critical === 1 && formData.form["security-type"] === 0) {
 		markdownText += `
