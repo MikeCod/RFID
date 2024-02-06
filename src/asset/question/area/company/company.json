@@ -218,6 +218,84 @@
 
 		}
 
+	],
+
+	"Security History" :[
+
+		{
+		"name": "security-history0",
+		"text": "How big is your business?",
+		"answers": [ "Less than 10 employees", "Between 11 and 50 employees",
+		 "Between 51 and 250 employees", "Between 251 and 500 employees",
+		 "More than 500 employees"]
+		},
+		{
+		"name": "security-history1",
+		"text": "What is your field?",
+		"answers": [ "Software Publisher,Industrial", "Services",
+		"ESN", "Health", "Data Host","Technology / Robotics", "Others"]
+		},
+		{
+			"name": "security-history2",
+			"text": "How do you rate your cybersecurity?",
+			"answers": ["Lack of security measures", "Novice Level", "Niveau débutant",
+			"Intermediate Level", "Professional level"]
+
+		},
+		{
+			"dependsOn": [
+				"security-history2",
+				0
+			],
+			"name" : "security-history3",
+			"text": "Existing Incident Reports",
+			"answers": ["Yes", "No"]
+		
+		},
+		{	
+			"dependsOn": [
+				"security-history2",
+				1,2
+			],
+			"name": "security-history4",
+			"text": "Do you have in-house physical security skills?",
+			"answers": ["Not at all", "yes, some of them", "yes and operational"]
+		},
+		{
+			"dependsOn": [
+				"security-history4",
+				0,1,2
+			],
+			"name": "security-history5",
+			"text": "Are there information security awareness and training programs for employees?",
+			"answers": ["No", "Yes but we can do better", "Yes and it works"]
+		},
+		{
+			"dependsOn": [
+				"security-history0",
+				3,4
+			],
+			"name": "security-history6",
+			"text": "Is there a management-approved information security policy?",
+			"answers": ["No approved", "approved"]
+		},
+		{	
+			"dependsOn": [
+			"security-history6",
+			0,1
+		],
+			"name": "security-history7",
+			"text": "Do you have a list of users and access to all your systems?",
+			"answers": ["No", "In the process of being set up", "Yes, in place"]
+		},
+		{
+			"name": "security-history8",
+			"text": "Depending on your size, what is your idea of the budget for a tailor-made audit?",
+			"answers": ["Between €15,000 and €30,000", "Between €30,000 and €60,000", "Between €60,000 and €80,000",
+			"Between €80,000 and €100,000", "More than €100,000"]
+		}
+
+
 	]
 
 }
