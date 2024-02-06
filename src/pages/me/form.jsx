@@ -61,7 +61,7 @@ export default function () {
 	const [positionMax, setPositionMax] = useState(0);
 
 	const isEnd = () => (
-		(position - 1) > questionsFormatted.length &&
+		(position + 2) > questionsFormatted.length &&
 		filled
 	);
 
@@ -70,7 +70,8 @@ export default function () {
 		<div id="me">
 			<Header>
 				<a href="/me">My profile</a>
-				<a href="/me/form">Audit form</a>
+				<a href="/me/form">Audit Form</a>
+				<a href="/api/download">Download report</a>
 			</Header>
 			<main className="flex flex-col min-h-screen items-center">
 				<Answers.Provider value={[answers, setAnswers]}>

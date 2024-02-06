@@ -93,7 +93,8 @@ export default function ({ profile }) {
 		<div id="me">
 			<Header>
 				<a href="/me">My profile</a>
-				<a href="/me/form">Audit form</a>
+				<a href="/me/form">Audit Form</a>
+				<a href="/api/download">Download report</a>
 			</Header>
 			<main className="w-screen h-screen justify-start px-40 flex-col">
 				<h1>Hello {profile.name}</h1>

@@ -60,7 +60,8 @@ export function Section({ title, questions, slideIndex }) {
 							onChange={selected => {
 								console.log(selected);
 								setAnswers({ ...answers, [item.name]: selected });
-								setFilled(arr.findIndex(({ name }) => (answers[name] !== -1 || !visible)) === -1);
+								setFilled(true);
+								// setFilled(arr.findIndex(({ name }) => (answers[name] !== -1 || !visible)) === -1);
 							}}
 							key={index}
 						/>
