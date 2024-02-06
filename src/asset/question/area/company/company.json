@@ -1,7 +1,7 @@
 { 
 	"Acces physique":[
 	{
-		"name": "Physical-access0",
+		"name": "doors",
 		"text": "How many doors do you have?",
 		"answers": [
 			"1-10",
@@ -10,7 +10,7 @@
 	},
 	{
 		
-		"name": "Physical-access1",
+		"name": "critical",
 		"text": "Critical Location",
 		"answers":[
 			"1-10",
@@ -19,7 +19,7 @@
 	},
 	{
 		
-		"name": "Physical-access2",
+		"name": "security-type",
 		"text": "Which type of security",
 		"answers":[
 			"Physical Barriers and Turnstiles with Badge",
@@ -30,7 +30,7 @@
 ],
 	"Technology" : [
 		{
-			"name": "technology0",
+			"name": "technology",
 			"text": "Which technology on the doors?",
 			"answers": [
 				"RFID/NFC Badge Readers",
@@ -40,10 +40,10 @@
 		},
 		{
 			"dependsOn": [
-				"technology0",
+				"technology",
 				0
 			],
-			"name": "technology1",
+			"name": "technology-1",
 			"text": "Type of badges used?",
 			"answers": [
 				"RFID",
@@ -54,10 +54,10 @@
 		},
 		{
 			"dependsOn": [
-				"technology1",
+				"technology-1",
 				0
 			],
-			"name": "technology2",
+			"name": "rfid",
 			"text": "What type of RFID do you use at the moment ?",
 			"answers": [
 				"LF: 120–150 kHz",
@@ -72,10 +72,10 @@
 		},
 		{
 			"dependsOn": [
-				"technology1",
+				"technology-1",
 				1
 			],
-			"name": "technology3",
+			"name": "nfc",
 			"text": "What type of NFC do you use at the moment ?",
 			"answers": [
 				"A",
@@ -88,10 +88,10 @@
 
 		{
 			"dependsOn": [
-				"technology1",
+				"technology-1",
 				2
 			],
-			"name": "technology4",
+			"name": "smartcard",
 			"text": "What type of Smartcard do you use at the moment ?",
 			"answers": [
 				"MIFARE Mini",
@@ -110,31 +110,18 @@
 				"technology3",
 				0,1
 			],
-			"name": "technology4",
+			"name": "data-storage",
 			"text": "Is it Decentralized data storage?",
 			"answers": [
 				"Local Server Storage",
 				"Outsourced service"
 			]
-		},
-		{
-			"dependsOn": [
-				"technology0",
-				2
-			],
-			"name": "technologyf001",
-			"text": "Is Decentralized Information Storage?",
-			"answers": [
-				"Loca Server Storage",
-				"Outsourced service"
-			]
-
 		}
 	],
 
 	"Policies and Security" : [
 		{
-			"name": "Policy0",
+			"name": "permissions",
 			"text": "What permission levels on badges",
 			"answers":[
 				"Total access",
@@ -147,10 +134,10 @@
 		},
 		{
 			"dependsOn": [
-				"Policy0",
+				"permissions",
 				1
 			],
-			"name": "Policy1",
+			"name": "permissions-verification",
 			"text": "Do you have a Badge Information Verification Process?",
 			"answers": [
 				"Yes",
@@ -161,24 +148,24 @@
 		{
 
 			"dependsOn":[
-				"Policy1",
+				"permissions-verification",
 				0
 			],
-			"name": "policy2",
+			"name": "permissions-update",
 			"text": "Do you have a process for updating badge information?",
 			"answers": [
 				"Yes",
-				"No process"
+				"No"
 			]
 		},
 		{
 
 			"dependsOn":[
-				"policy2",
+				"permissions-update",
 				0
 			],
-			"name": "policy3",
-			"text": "Frequency of checks?",
+			"name": "permissions-update-frequency",
+			"text": "Frequency of audit?",
 			"answers": [
 				"Daily or Weekly Checks",
 				"Monthly Audits",
@@ -189,30 +176,30 @@
 		},
 		{
 			"dependsOn": [
-				"Policy0",
+				"permissions",
 				4
 			],
-			"name": "Policy00040",
+			"name": "permissions-revokation",
 			"text": "There is Badge Revocation Procedure?",
 			"answers": ["Yes","No"]
 
 		},
 		{
 			"dependsOn": [
-				"Policy00040",
+				"permissions-revokation",
 				0
 			],
-		"name": "policy4",
+		"name": "permissions-revokation-recent",
 		"text": "Have there been any badge revocations recently?",
 		"answers": [ "Yes", "No"]
 
 		},
 		{
 			"dependsOn": [
-				"policy4",
+				"permissions-revokation-recent",
 				0
 			],
-		"name": "policy5",
+		"name": "kpi-respected",
 		"text": "Have the KPIs of the process been respected??",
 		"answers": [ "Yes", "No"]
 
@@ -221,22 +208,21 @@
 	],
 
 	"Security History" :[
-
 		{
-		"name": "security-history0",
+		"name": "enterprise-size",
 		"text": "How big is your business?",
 		"answers": [ "Less than 10 employees", "Between 11 and 50 employees",
 		 "Between 51 and 250 employees", "Between 251 and 500 employees",
 		 "More than 500 employees"]
 		},
 		{
-		"name": "security-history1",
+		"name": "enterprise-domain",
 		"text": "What is your field?",
 		"answers": [ "Software Publisher,Industrial", "Services",
 		"ESN", "Health", "Data Host","Technology / Robotics", "Others"]
 		},
 		{
-			"name": "security-history2",
+			"name": "enterprise-security-level",
 			"text": "How do you rate your cybersecurity?",
 			"answers": ["Lack of security measures", "Novice Level", "Niveau débutant",
 			"Intermediate Level", "Professional level"]
@@ -244,52 +230,52 @@
 		},
 		{
 			"dependsOn": [
-				"security-history2",
+				"enterprise-security-level",
 				0
 			],
-			"name" : "security-history3",
+			"name" : "enterprise-security-incidents",
 			"text": "Existing Incident Reports",
 			"answers": ["Yes", "No"]
 		
 		},
 		{	
 			"dependsOn": [
-				"security-history2",
+				"enterprise-security-level",
 				1,2
 			],
-			"name": "security-history4",
+			"name": "enterprise-security-skills",
 			"text": "Do you have in-house physical security skills?",
 			"answers": ["Not at all", "yes, some of them", "yes and operational"]
 		},
 		{
 			"dependsOn": [
-				"security-history4",
+				"enterprise-security-skills",
 				0,1,2
 			],
-			"name": "security-history5",
+			"name": "enterprise-security-awareness",
 			"text": "Are there information security awareness and training programs for employees?",
 			"answers": ["No", "Yes but we can do better", "Yes and it works"]
 		},
 		{
 			"dependsOn": [
-				"security-history0",
+				"enterprise-size",
 				3,4
 			],
-			"name": "security-history6",
+			"name": "enterprise-security-management",
 			"text": "Is there a management-approved information security policy?",
 			"answers": ["No approved", "approved"]
 		},
 		{	
 			"dependsOn": [
-			"security-history6",
+			"enterprise-security-management",
 			0,1
 		],
-			"name": "security-history7",
+			"name": "enterprise-security-management-users",
 			"text": "Do you have a list of users and access to all your systems?",
 			"answers": ["No", "In the process of being set up", "Yes, in place"]
 		},
 		{
-			"name": "security-history8",
+			"name": "enterprise-audit-price",
 			"text": "Depending on your size, what is your idea of the budget for a tailor-made audit?",
 			"answers": ["Between €15,000 and €30,000", "Between €30,000 and €60,000", "Between €60,000 and €80,000",
 			"Between €80,000 and €100,000", "More than €100,000"]
