@@ -1,11 +1,1 @@
-[
-	{
-		"name": "target-area",
-		"text": "What kind of area do you intend to secure ?",
-		"answers": [
-			"Company (private)",
-			"Company services (used by customers) (e.g. public transports)",
-			"Event tickets"
-		]
-	}
-]
+[]

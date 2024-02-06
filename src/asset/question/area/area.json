@@ -1,5 +1,8 @@
 [
 	{
+		"dependsOn": [
+			"target_1", 1
+		],
 		"name": "target-area",
 		"text": "What kind of area do you intend to secure ?",
 		"answers": [

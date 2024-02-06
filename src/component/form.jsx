@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Slide } from 'pure-react-carousel';
 import FadeIn from 'react-fade-in/lib/FadeIn';
+import { Answers, Filled } from '@cutils';
+import * as Form from "@asset/question";
 
 
 export const Question = ({ text, dependsOn, show, name, answers, selected, onChange }) => {
+
 	return (
 		show &&
 		<FadeIn>
@@ -27,6 +31,56 @@ export const Question = ({ text, dependsOn, show, name, answers, selected, onCha
 		</FadeIn>
 	);
 }
+
+export function Section({ title, questions, slideIndex }) {
+	const [answers, setAnswers] = useContext(Answers);
+	const setFilled = useContext(Filled);
+
+	console.log(questions);
+
+	return (
+		<Slide
+			index={slideIndex}
+			className="w-screen overflow-scroll min-h-screen border-l border-green-600 pl-8 pr-40"
+			key={slideIndex}
+		>
+			{
+				title !== null &&
+				<h1 className="capitalize">{title}</h1>
+			}
+			{
+				questions?.map((item, index, arr) => (
+					<Question
+						{...item}
+						show={item.dependsOn !== undefined ? (answers[item.dependsOn[0]] === item.dependsOn[1]) : true}
+						selected={answers[item.name]}
+						onChange={selected => {
+							console.log(selected);
+							setAnswers({ ...answers, [item.name]: selected });
+							setFilled(arr.find(({ name }) => name !== item.name && answers[name] === -1) === undefined);
+						}}
+						key={index}
+					/>
+				))
+			}
+		</Slide>
+	);
+}
+
+export const questionsFormatted = (() => {
+	let arr = [];
+	for (const a of Form.questions) {
+		if (Array.isArray(a))
+			arr.push(<Section questions={a} slideIndex={arr.length} />);
+		else for(const title in a)
+		{
+			console.log();
+			arr.push(<Section title={title} questions={a[title]} slideIndex={arr.length} />);
+		}
+	}
+	console.log(arr);
+	return arr;
+})()
 
 export function Progress({ position, positionMax, max }) {
 	const style = i => {

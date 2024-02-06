@@ -1,9 +1,10 @@
 
-import area from "@asset/question/area/area.json";
-import area from "@asset/question/area/tickets.json";
-import area from "@asset/question/area/company/company.json";
-import generic from "@asset/question/generic.json";
-import data from "@asset/question/data.json";
+import generic from "./generic.json";
+import data from "./data.json";
+import area from "./area/area.json";
+import tickets from "./area/tickets.json";
+import company from "./area/company/company.json";
 
 
-export const Form = [...Object.values(generic), ...data, ...area];
+export const questions = [generic, data, area, tickets, company];
+export { generic, data, area, tickets, company };
