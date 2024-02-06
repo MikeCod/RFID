@@ -2,7 +2,6 @@
 	"Evaluate your equipment (optional)": [
 		{
 			"name": "proto-1",
-			"section": "",
 			"text": "What kind of protocol do you use at the moment ?",
 			"answers": [
 				"RFID",
@@ -75,7 +74,6 @@
 	"What purpose": [
 		{
 			"name": "target_1",
-			"section": "",
 			"text": "What do you intend to secure ?",
 			"answers": [
 				"Data or device(s) (e.g. computer)",
