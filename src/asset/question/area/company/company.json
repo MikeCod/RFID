@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 {
-	"Physical access": [
+	"Acces physique": [
 		{
-			"name": "Physical-access0",
+			"name": "doors",
 			"text": "How many doors do you have?",
 			"answers": [
 				"1-10",
@@ -10,7 +9,7 @@
 			]
 		},
 		{
-			"name": "Physical-access1",
+			"name": "critical",
 			"text": "Critical Location",
 			"answers": [
 				"1-10",
@@ -18,7 +17,7 @@
 			]
 		},
 		{
-			"name": "Physical-access2",
+			"name": "security-type",
 			"text": "Which type of security",
 			"answers": [
 				"Physical Barriers and Turnstiles with Badge",
@@ -28,39 +27,6 @@
 		}
 	],
 	"Technology": [
-=======
-{ 
-	"Acces physique":[
-	{
-		"name": "doors",
-		"text": "How many doors do you have?",
-		"answers": [
-			"1-10",
-			">10"
-		]
-	},
-	{
-		
-		"name": "critical",
-		"text": "Critical Location",
-		"answers":[
-			"1-10",
-			">10"
-		]
-	},
-	{
-		
-		"name": "security-type",
-		"text": "Which type of security",
-		"answers":[
-			"Physical Barriers and Turnstiles with Badge",
-			"Granties with badge",
-			"Free admission"
-		]
-	}
-],
-	"Technology" : [
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 		{
 			"name": "technology",
 			"text": "Which technology on the doors?",
@@ -147,21 +113,6 @@
 				"Local Server Storage",
 				"Outsourced service"
 			]
-<<<<<<< HEAD
-		},
-		{
-			"dependsOn": [
-				"technology0",
-				2
-			],
-			"name": "technologyf001",
-			"text": "Is Decentralized Information Storage?",
-			"answers": [
-				"Loca Server Storage",
-				"Outsourced service"
-			]
-=======
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 		}
 	],
 	"Policies and Security": [
@@ -190,14 +141,8 @@
 			]
 		},
 		{
-<<<<<<< HEAD
 			"dependsOn": [
-				"Policy1",
-=======
-
-			"dependsOn":[
 				"permissions-verification",
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 				0
 			],
 			"name": "permissions-update",
@@ -208,14 +153,8 @@
 			]
 		},
 		{
-<<<<<<< HEAD
 			"dependsOn": [
-				"policy2",
-=======
-
-			"dependsOn":[
 				"permissions-update",
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 				0
 			],
 			"name": "permissions-update-frequency",
@@ -245,117 +184,140 @@
 				"permissions-revokation",
 				0
 			],
-<<<<<<< HEAD
-			"name": "policy4",
+			"name": "permissions-revokation-recent",
 			"text": "Have there been any badge revocations recently?",
 			"answers": [
 				"Yes",
 				"No"
 			]
-=======
-		"name": "permissions-revokation-recent",
-		"text": "Have there been any badge revocations recently?",
-		"answers": [ "Yes", "No"]
-
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 		},
 		{
 			"dependsOn": [
 				"permissions-revokation-recent",
 				0
 			],
-<<<<<<< HEAD
-			"name": "policy5",
+			"name": "kpi-respected",
 			"text": "Have the KPIs of the process been respected??",
 			"answers": [
 				"Yes",
 				"No"
 			]
 		}
-=======
-		"name": "kpi-respected",
-		"text": "Have the KPIs of the process been respected??",
-		"answers": [ "Yes", "No"]
-
-		}
-
 	],
-
-	"Security History" :[
+	"Security History": [
 		{
-		"name": "enterprise-size",
-		"text": "How big is your business?",
-		"answers": [ "Less than 10 employees", "Between 11 and 50 employees",
-		 "Between 51 and 250 employees", "Between 251 and 500 employees",
-		 "More than 500 employees"]
+			"name": "enterprise-size",
+			"text": "How big is your business?",
+			"answers": [
+				"Less than 10 employees",
+				"Between 11 and 50 employees",
+				"Between 51 and 250 employees",
+				"Between 251 and 500 employees",
+				"More than 500 employees"
+			]
 		},
 		{
-		"name": "enterprise-domain",
-		"text": "What is your field?",
-		"answers": [ "Software Publisher,Industrial", "Services",
-		"ESN", "Health", "Data Host","Technology / Robotics", "Others"]
+			"name": "enterprise-domain",
+			"text": "What is your field?",
+			"answers": [
+				"Software Publisher,Industrial",
+				"Services",
+				"ESN",
+				"Health",
+				"Data Host",
+				"Technology / Robotics",
+				"Others"
+			]
 		},
 		{
 			"name": "enterprise-security-level",
 			"text": "How do you rate your cybersecurity?",
-			"answers": ["Lack of security measures", "Novice Level", "Niveau débutant",
-			"Intermediate Level", "Professional level"]
-
+			"answers": [
+				"Lack of security measures",
+				"Novice Level",
+				"Niveau débutant",
+				"Intermediate Level",
+				"Professional level"
+			]
 		},
 		{
 			"dependsOn": [
 				"enterprise-security-level",
 				0
 			],
-			"name" : "enterprise-security-incidents",
+			"name": "enterprise-security-incidents",
 			"text": "Existing Incident Reports",
-			"answers": ["Yes", "No"]
-		
+			"answers": [
+				"Yes",
+				"No"
+			]
 		},
-		{	
+		{
 			"dependsOn": [
 				"enterprise-security-level",
-				1,2
+				1,
+				2
 			],
 			"name": "enterprise-security-skills",
 			"text": "Do you have in-house physical security skills?",
-			"answers": ["Not at all", "yes, some of them", "yes and operational"]
+			"answers": [
+				"Not at all",
+				"yes, some of them",
+				"yes and operational"
+			]
 		},
 		{
 			"dependsOn": [
 				"enterprise-security-skills",
-				0,1,2
+				0,
+				1,
+				2
 			],
 			"name": "enterprise-security-awareness",
 			"text": "Are there information security awareness and training programs for employees?",
-			"answers": ["No", "Yes but we can do better", "Yes and it works"]
+			"answers": [
+				"No",
+				"Yes but we can do better",
+				"Yes and it works"
+			]
 		},
 		{
 			"dependsOn": [
 				"enterprise-size",
-				3,4
+				3,
+				4
 			],
 			"name": "enterprise-security-management",
 			"text": "Is there a management-approved information security policy?",
-			"answers": ["No approved", "approved"]
+			"answers": [
+				"No approved",
+				"approved"
+			]
 		},
-		{	
+		{
 			"dependsOn": [
-			"enterprise-security-management",
-			0,1
-		],
+				"enterprise-security-management",
+				0,
+				1
+			],
 			"name": "enterprise-security-management-users",
 			"text": "Do you have a list of users and access to all your systems?",
-			"answers": ["No", "In the process of being set up", "Yes, in place"]
+			"answers": [
+				"No",
+				"In the process of being set up",
+				"Yes, in place"
+			]
 		},
 		{
 			"name": "enterprise-audit-price",
 			"text": "Depending on your size, what is your idea of the budget for a tailor-made audit?",
-			"answers": ["Between €15,000 and €30,000", "Between €30,000 and €60,000", "Between €60,000 and €80,000",
-			"Between €80,000 and €100,000", "More than €100,000"]
+			"answers": [
+				"Between €15,000 and €30,000",
+				"Between €30,000 and €60,000",
+				"Between €60,000 and €80,000",
+				"Between €80,000 and €100,000",
+				"More than €100,000"
+			]
 		}
-
-
->>>>>>> fe86cca76cbd935ffb3f3a8396e173b012f7e398
 	]
 }
