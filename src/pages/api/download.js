@@ -16,8 +16,8 @@ export default async function (req, res) {
 		console.log(markdownReport);
 
 		const pipeline = promisify(stream.pipeline);
-		res.setHeader('Content-Type', 'text/markdown');
-		res.setHeader('Content-Disposition', 'attachment; filename=report.md');
+		res.setHeader('Content-Type', 'application/pdf');
+		res.setHeader('Content-Disposition', 'attachment; filename=report.pdf');
 		await pipeline(markdownReport, res);
 	}
 	catch (err) {
