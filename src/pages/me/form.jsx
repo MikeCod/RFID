@@ -21,15 +21,22 @@ export async function getServerSideProps(ctx) {
 		const { email } = profile;
 
 		await Server.getBody(req, res);
-		const form = req?.body || {};
+		let form = req?.body || {};
 		const { _method } = form;
 		delete form._method;
+		let num;
 
+		for(const name in form)	{
+			if(form[name] === "" || isNaN(num = parseInt(form[name])))
+				delete form[name]
+			else
+				form[name] = num;
+		}
 		console.log(form);
 
 		switch (_method?.toUpperCase()) {
 			case "PUT":
-				if (!await (await Server.db).collection("user").updateOne({ email }, { $addToSet: { form } }))
+				if (!await (await Server.db).collection("user").updateOne({ email }, { $set: { form } }))
 					throw new Error("Could not update");
 				break;
 			case "DELETE":

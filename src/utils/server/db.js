@@ -7,7 +7,6 @@ export const db = new Promise(async (resolve, reject) => {
 		console.log(`${MONGO_SCHEME}://${MONGO_USER}:****@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}?authSource=admin`);
 		const client = new MongoClient(`${MONGO_SCHEME}://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}?authSource=admin`);
 		await client.connect();
-		console.log("Mongo connected !");
 		resolve(client.db());
 	}
 	catch (err) {
