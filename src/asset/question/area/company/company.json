@@ -1,7 +1,7 @@
 { 
 	"Acces physique":[
 	{
-		"name": "proto-00",
+		"name": "Physical-access0",
 		"text": "How many doors do you have?",
 		"answers": [
 			"1-10",
@@ -9,11 +9,8 @@
 		]
 	},
 	{
-		"dependsOn": [
-			"proto-00",
-			0
-		],
-		"name": "proto-01",
+		
+		"name": "Physical-access1",
 		"text": "Critical Location",
 		"answers":[
 			"1-10",
@@ -21,11 +18,8 @@
 		]
 	},
 	{
-		"dependsOn": [
-			"proto-01",
-			0
-		],
-		"name": "proto-02",
+		
+		"name": "Physical-access2",
 		"text": "Which type of security",
 		"answers":[
 			"Physical Barriers and Turnstiles with Badge",
@@ -33,7 +27,199 @@
 			"Free admission"
 		]
 	}
-	
+],
+	"Technology" : [
+		{
+			"name": "technology0",
+			"text": "Which technology on the doors?",
+			"answers": [
+				"RFID/NFC Badge Readers",
+				"Codes PIN",
+				"Biometrics"
+			]
+		},
+		{
+			"dependsOn": [
+				"technology0",
+				0
+			],
+			"name": "technology1",
+			"text": "Type of badges used?",
+			"answers": [
+				"RFID",
+				"NFC",
+				"Contactless SmartCard"
+			]
 
-]
+		},
+		{
+			"dependsOn": [
+				"technology1",
+				0
+			],
+			"name": "technology2",
+			"text": "What type of RFID do you use at the moment ?",
+			"answers": [
+				"LF: 120–150 kHz",
+				"HF: 13.56 MHz",
+				"UHF: 433 MHz",
+				"UHF: 865–928 MHz",
+				"UHF-SHF: 2450–5800 MHz",
+				"SHF: 3.1–10 GHz",
+				"SHF: 24.125 GHz",
+				"I don't know / Nothing"
+			]
+		},
+		{
+			"dependsOn": [
+				"technology1",
+				1
+			],
+			"name": "technology3",
+			"text": "What type of NFC do you use at the moment ?",
+			"answers": [
+				"A",
+				"B",
+				"F",
+				"V",
+				"I don't know / Nothing"
+			]
+		},
+
+		{
+			"dependsOn": [
+				"technology1",
+				2
+			],
+			"name": "technology4",
+			"text": "What type of Smartcard do you use at the moment ?",
+			"answers": [
+				"MIFARE Mini",
+				"MIFARE Classic 1k",
+				"MIFARE Classic 4k",
+				"MIFARE Ultralight",
+				"MIFARE DESFire",
+				"MPCOS",
+				"JCOP",
+				"Jewel",
+				"I don't know / Nothing"
+			]
+		},
+		{
+			"dependsOn": [
+				"technology3",
+				0,1
+			],
+			"name": "technology4",
+			"text": "Is it Decentralized data storage?",
+			"answers": [
+				"Local Server Storage",
+				"Outsourced service"
+			]
+		},
+		{
+			"dependsOn": [
+				"technology0",
+				2
+			],
+			"name": "technologyf001",
+			"text": "Is Decentralized Information Storage?",
+			"answers": [
+				"Loca Server Storage",
+				"Outsourced service"
+			]
+
+		}
+	],
+
+	"Policies and Security" : [
+		{
+			"name": "Policy0",
+			"text": "What permission levels on badges",
+			"answers":[
+				"Total access",
+				"Programmable access",
+				"Restricted access by zone",
+				"Hierarchy-based access",
+				"Temporary access",
+				"Access can be revoked"
+			]
+		},
+		{
+			"dependsOn": [
+				"Policy0",
+				1
+			],
+			"name": "Policy1",
+			"text": "Do you have a Badge Information Verification Process?",
+			"answers": [
+				"Yes",
+				"No"
+			]
+
+		},
+		{
+
+			"dependsOn":[
+				"Policy1",
+				0
+			],
+			"name": "policy2",
+			"text": "Do you have a process for updating badge information?",
+			"answers": [
+				"Yes",
+				"No process"
+			]
+		},
+		{
+
+			"dependsOn":[
+				"policy2",
+				0
+			],
+			"name": "policy3",
+			"text": "Frequency of checks?",
+			"answers": [
+				"Daily or Weekly Checks",
+				"Monthly Audits",
+				"Bi-Monthly Audits",
+				"Quarterly Audits",
+				"Semi-Annual or Annual Audits"
+			]
+		},
+		{
+			"dependsOn": [
+				"Policy0",
+				4
+			],
+			"name": "Policy00040",
+			"text": "There is Badge Revocation Procedure?",
+			"answers": ["Yes","No"]
+
+		},
+		{
+			"dependsOn": [
+				"Policy00040",
+				0
+			],
+		"name": "policy4",
+		"text": "Have there been any badge revocations recently?",
+		"answers": [ "Yes", "No"]
+
+		},
+		{
+			"dependsOn": [
+				"policy4",
+				0
+			],
+		"name": "policy5",
+		"text": "Have the KPIs of the process been respected??",
+		"answers": [ "Yes", "No"]
+
+		}
+
+	]
+
 }
+
+
