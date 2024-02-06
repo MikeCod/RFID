@@ -37,8 +37,10 @@ export default async function (req, res) {
 							text = text.substring(spacePos + 1);
 							options.lineHeight = 24 - ((spacePos - 1) * 2);
 							options.size = options.lineHeight;
-							options.color = rgb(0.05, 0.4, 0.1);
-							j += (4 - spacePos) * 5;
+							options.x += 20 * spacePos;
+							options.color = rgb(0.05, 0.45 * (1 / spacePos), 0.35 / (1.5 / spacePos));
+							j += (4 - spacePos) * 16 + 10;
+							options.y -= (4 - spacePos) * 15;
 							break;
 						case "-":
 							text = text.substring(spacePos + 1);
@@ -48,21 +50,21 @@ export default async function (req, res) {
 							break;
 						case "*":
 							const boldPos = text.substring(3).indexOf("**");
-							const textBold = text.substring(2, boldPos+2);
+							const textBold = text.substring(2, boldPos + 2);
 							text = text.substring(boldPos + 6);
 
 							options.color = rgb(0.05, 0.1, 0.1);
 							page.drawText(textBold, { ...options, font: helveticaBoldFont });
-							options.x += textBold.length * (options.size/2);
+							options.x += textBold.length * (options.size / 2.1) + 20;
 							options.maxWidth -= options.x;
 							break;
 						default:
 							break;
 					}
 					page.drawText(text, options);
-					const linesCount = parseInt((text.length) / (options.size*2));
+					const linesCount = parseInt((text.length) / (options.size * 1.7));
 					console.log(linesCount);
-					j += 8 * linesCount;
+					j += 7 * linesCount;
 				}
 				++i;
 			}
