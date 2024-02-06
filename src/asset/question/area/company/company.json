@@ -82,6 +82,8 @@
 				"I don't know / Nothing"
 			]
 		},
+	
+
 		{
 			"dependsOn": [
 				"technology-1",
@@ -103,7 +105,7 @@
 		},
 		{
 			"dependsOn": [
-				"technology3",
+				"nfc",
 				0,
 				1
 			],
