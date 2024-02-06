@@ -17,7 +17,7 @@ export const Question = ({ text, dependsOn, show, name, answers, selected, onCha
 						answers
 							.map((ans, index) => (
 								<p
-									className={`mt-1 px-8 py-2 rounded-full w-full font-semibold cursor-pointer border ${selected === index ? "bg-green-700 text-white border-green-200" : "border-green-600/30"}`}
+									className={`mt-1 px-8 py-2 rounded-full w-full font-semibold cursor-pointer border ${selected === index ? "bg-green-600/90 text-white border-green-200" : "border-green-600/30"}`}
 									onClick={() => onChange(index)}
 									key={index}
 								>
@@ -39,6 +39,7 @@ export function Section({ title, questions, slideIndex }) {
 	console.log(questions);
 
 	return (
+		questions?.length > 0 &&
 		<Slide
 			index={slideIndex}
 			className="w-screen overflow-scroll min-h-screen border-l border-green-600 pl-8 pr-40"
@@ -49,19 +50,22 @@ export function Section({ title, questions, slideIndex }) {
 				<h1 className="capitalize">{title}</h1>
 			}
 			{
-				questions?.map((item, index, arr) => (
-					<Question
-						{...item}
-						show={item.dependsOn !== undefined ? (answers[item.dependsOn[0]] === item.dependsOn[1]) : true}
-						selected={answers[item.name]}
-						onChange={selected => {
-							console.log(selected);
-							setAnswers({ ...answers, [item.name]: selected });
-							setFilled(arr.find(({ name }) => name !== item.name && answers[name] === -1) === undefined);
-						}}
-						key={index}
-					/>
-				))
+				questions?.map((item, index, arr) => {
+					const visible = item.dependsOn !== undefined ? (item.dependsOn.slice(1).findIndex(i => i === answers[item.dependsOn[0]]) !== -1) : true;
+					return (
+						<Question
+							{...item}
+							show={visible}
+							selected={answers[item.name]}
+							onChange={selected => {
+								console.log(selected);
+								setAnswers({ ...answers, [item.name]: selected });
+								setFilled(arr.find(({ name }) => name !== item.name && (answers[name] === -1 )) === undefined);
+							}}
+							key={index}
+						/>
+					);
+				})
 			}
 		</Slide>
 	);
@@ -72,8 +76,7 @@ export const questionsFormatted = (() => {
 	for (const a of Form.questions) {
 		if (Array.isArray(a))
 			arr.push(<Section questions={a} slideIndex={arr.length} />);
-		else for(const title in a)
-		{
+		else for (const title in a) {
 			console.log();
 			arr.push(<Section title={title} questions={a[title]} slideIndex={arr.length} />);
 		}

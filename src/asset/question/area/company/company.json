@@ -1,34 +1,32 @@
-{ 
-	"Acces physique":[
-	{
-		"name": "Physical-access0",
-		"text": "How many doors do you have?",
-		"answers": [
-			"1-10",
-			">10"
-		]
-	},
-	{
-		
-		"name": "Physical-access1",
-		"text": "Critical Location",
-		"answers":[
-			"1-10",
-			">10"
-		]
-	},
-	{
-		
-		"name": "Physical-access2",
-		"text": "Which type of security",
-		"answers":[
-			"Physical Barriers and Turnstiles with Badge",
-			"Granties with badge",
-			"Free admission"
-		]
-	}
-],
-	"Technology" : [
+{
+	"Physical access": [
+		{
+			"name": "Physical-access0",
+			"text": "How many doors do you have?",
+			"answers": [
+				"1-10",
+				">10"
+			]
+		},
+		{
+			"name": "Physical-access1",
+			"text": "Critical Location",
+			"answers": [
+				"1-10",
+				">10"
+			]
+		},
+		{
+			"name": "Physical-access2",
+			"text": "Which type of security",
+			"answers": [
+				"Physical Barriers and Turnstiles with Badge",
+				"Granties with badge",
+				"Free admission"
+			]
+		}
+	],
+	"Technology": [
 		{
 			"name": "technology0",
 			"text": "Which technology on the doors?",
@@ -50,7 +48,6 @@
 				"NFC",
 				"Contactless SmartCard"
 			]
-
 		},
 		{
 			"dependsOn": [
@@ -85,7 +82,6 @@
 				"I don't know / Nothing"
 			]
 		},
-
 		{
 			"dependsOn": [
 				"technology1",
@@ -108,7 +104,8 @@
 		{
 			"dependsOn": [
 				"technology3",
-				0,1
+				0,
+				1
 			],
 			"name": "technology4",
 			"text": "Is it Decentralized data storage?",
@@ -128,15 +125,13 @@
 				"Loca Server Storage",
 				"Outsourced service"
 			]
-
 		}
 	],
-
-	"Policies and Security" : [
+	"Policies and Security": [
 		{
 			"name": "Policy0",
 			"text": "What permission levels on badges",
-			"answers":[
+			"answers": [
 				"Total access",
 				"Programmable access",
 				"Restricted access by zone",
@@ -156,11 +151,9 @@
 				"Yes",
 				"No"
 			]
-
 		},
 		{
-
-			"dependsOn":[
+			"dependsOn": [
 				"Policy1",
 				0
 			],
@@ -172,8 +165,7 @@
 			]
 		},
 		{
-
-			"dependsOn":[
+			"dependsOn": [
 				"policy2",
 				0
 			],
@@ -194,32 +186,34 @@
 			],
 			"name": "Policy00040",
 			"text": "There is Badge Revocation Procedure?",
-			"answers": ["Yes","No"]
-
+			"answers": [
+				"Yes",
+				"No"
+			]
 		},
 		{
 			"dependsOn": [
 				"Policy00040",
 				0
 			],
-		"name": "policy4",
-		"text": "Have there been any badge revocations recently?",
-		"answers": [ "Yes", "No"]
-
+			"name": "policy4",
+			"text": "Have there been any badge revocations recently?",
+			"answers": [
+				"Yes",
+				"No"
+			]
 		},
 		{
 			"dependsOn": [
 				"policy4",
 				0
 			],
-		"name": "policy5",
-		"text": "Have the KPIs of the process been respected??",
-		"answers": [ "Yes", "No"]
-
+			"name": "policy5",
+			"text": "Have the KPIs of the process been respected??",
+			"answers": [
+				"Yes",
+				"No"
+			]
 		}
-
 	]
-
 }
-
-

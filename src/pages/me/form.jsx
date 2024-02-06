@@ -23,13 +23,9 @@ export async function getServerSideProps(ctx) {
 		await Server.getBody(req, res);
 		const form = req?.body || {};
 		const { _method } = form;
-		for (const key in form) {
-			if (questions.findIndex(({ name }) => name === ans) === -1)
-				delete form[key];
-			else
-				form[key] = parseInt(form[key]);
-		}
-		console.log(email, form);
+		delete form._method;
+
+		console.log(form);
 
 		switch (_method?.toUpperCase()) {
 			case "PUT":
@@ -39,12 +35,7 @@ export async function getServerSideProps(ctx) {
 			case "DELETE":
 				break;
 		}
-		return {
-			props: {
-				...result,
-				error: err.message
-			}
-		};
+		return result;
 	}
 	catch (err) {
 		return {
@@ -63,7 +54,7 @@ export default function () {
 	const [positionMax, setPositionMax] = useState(0);
 
 	const isEnd = () => (
-		position + 1 > questionsFormatted.length
+		position > questionsFormatted.length
 	);
 
 

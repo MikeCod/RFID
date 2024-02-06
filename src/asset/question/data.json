@@ -1,10 +1,16 @@
-[
-	{
-		"name": "target-data",
-		"text": "What kind of data would you protect ?",
-		"answers": [
-			"Computer/Operating system",
-			"Cryptocurrency"
-		]
-	}
-]
+{
+	"What data": [
+		{
+			"dependsOn": [
+				"target_1",
+				0
+			],
+			"name": "target-data",
+			"text": "What kind of data would you protect ?",
+			"answers": [
+				"Computer/Operating system",
+				"Cryptocurrency"
+			]
+		}
+	]
+}

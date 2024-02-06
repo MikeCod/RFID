@@ -1,0 +1,12 @@
+{
+	"What purpose": [
+		{
+			"name": "target_1",
+			"text": "What do you intend to secure ?",
+			"answers": [
+				"Data or device(s) (e.g. computer)",
+				"A physical area (e.g. company)"
+			]
+		}
+	]
+}
