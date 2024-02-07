@@ -26,7 +26,7 @@ export default async function (req, res) {
 			font: helveticaFont,
 			size: 28,
 			maxWidth: 400,
-			color: rgb(0.2, 0.45, 0.40)
+			color: rgb(0.35, 0.6, 0.5)
 		});
 
 
@@ -37,7 +37,7 @@ export default async function (req, res) {
 			font: helveticaBoldFont,
 			size: 14,
 			maxWidth: 400,
-			color: rgb(0.1, 0.1, 0.1)
+			color: rgb(0.4, 0.45, 0.45)
 		});
 
 		const date = new Date();
@@ -48,7 +48,7 @@ export default async function (req, res) {
 			font: helveticaFont,
 			size: 13,
 			maxWidth: 400,
-			color: rgb(0.3, 0.3, 0.3)
+			color: rgb(0.45, 0.45, 0.45)
 		});
 
 		for (let i = 0; i < textList.length;) {
@@ -73,14 +73,14 @@ export default async function (req, res) {
 							options.lineHeight = 24 - ((spacePos - 1) * 2);
 							options.size = options.lineHeight;
 							options.x += 20 * spacePos;
-							options.color = rgb(0.05, 0.45 * (1 / spacePos), 0.35 / (1.5 / spacePos));
+							options.color = rgb(0.4 - (spacePos * 0.08), 0.6 - (spacePos * 0.08), 0.7 - (spacePos * 0.08));
 							j += (4 - spacePos) * 16 + 10;
 							options.y -= (4 - spacePos) * 15;
 							break;
 						case "-":
 							text = text.substring(spacePos + 1);
 							options.lineHeight = 14;
-							options.color = rgb(0.05, 0.1, 0.1);
+							options.color = rgb(0.1, 0.18, 0.18);
 							// page.drawText(text, options);
 							break;
 						case "*":
@@ -88,7 +88,7 @@ export default async function (req, res) {
 							const textBold = text.substring(2, boldPos + 2);
 							text = text.substring(boldPos + 6);
 
-							options.color = rgb(0.05, 0.1, 0.1);
+							options.color = rgb(0.1, 0.18, 0.18);
 							page.drawText(textBold, { ...options, font: helveticaBoldFont });
 							options.x += textBold.length * (options.size / 2.1) + 20;
 							options.maxWidth -= options.x;
@@ -97,9 +97,9 @@ export default async function (req, res) {
 							break;
 					}
 					page.drawText(text, options);
-					const linesCount = parseInt((text.length) / (options.size * 1.7));
+					const linesCount = parseInt((text.length) / (options.size * 2.3));
 					console.log(linesCount);
-					j += 7 * linesCount;
+					j += 4 * linesCount;
 				}
 				++i;
 			}

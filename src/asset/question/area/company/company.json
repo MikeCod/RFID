@@ -4,20 +4,20 @@
 			"name": "doors",
 			"text": "How many doors do you have?",
 			"answers": [
-				"1-10",
-				">10"
+				"1-9",
+				"10 or more"
 			]
 		},
 		{
 			"name": "critical",
 			"text": "Critical Location",
 			"answers": [
-				"1-10",
-				">10"
+				"1-9",
+				"10 or more"
 			]
 		},
 		{
-			"name": "security-type",
+			"name": "security_type",
 			"text": "Which type of security",
 			"answers": [
 				"Physical Barriers and Turnstiles with Badge",
@@ -41,7 +41,7 @@
 				"technology",
 				0
 			],
-			"name": "technology-1",
+			"name": "technology_1",
 			"text": "Type of badges used?",
 			"answers": [
 				"RFID",
@@ -51,7 +51,7 @@
 		},
 		{
 			"dependsOn": [
-				"technology-1",
+				"technology_1",
 				0
 			],
 			"name": "rfid",
@@ -61,7 +61,7 @@
 				"HF: 13.56 MHz",
 				"UHF: 433 MHz",
 				"UHF: 865–928 MHz",
-				"UHF-SHF: 2450–5800 MHz",
+				"UHF_SHF: 2450–5800 MHz",
 				"SHF: 3.1–10 GHz",
 				"SHF: 24.125 GHz",
 				"I don't know / Nothing"
@@ -69,7 +69,7 @@
 		},
 		{
 			"dependsOn": [
-				"technology-1",
+				"technology_1",
 				1
 			],
 			"name": "nfc",
@@ -86,7 +86,7 @@
 
 		{
 			"dependsOn": [
-				"technology-1",
+				"technology_1",
 				2
 			],
 			"name": "smartcard",
@@ -109,7 +109,7 @@
 				0,
 				1
 			],
-			"name": "data-storage",
+			"name": "data_storage",
 			"text": "Is it Decentralized data storage?",
 			"answers": [
 				"Local Server Storage",
@@ -125,7 +125,7 @@
 				"Total access",
 				"Programmable access",
 				"Restricted access by zone",
-				"Hierarchy-based access",
+				"Hierarchy_based access",
 				"Temporary access",
 				"Access can be revoked"
 			]
@@ -135,7 +135,7 @@
 				"permissions",
 				1
 			],
-			"name": "permissions-verification",
+			"name": "permissions_verification",
 			"text": "Do you have a Badge Information Verification Process?",
 			"answers": [
 				"Yes",
@@ -144,10 +144,10 @@
 		},
 		{
 			"dependsOn": [
-				"permissions-verification",
+				"permissions_verification",
 				0
 			],
-			"name": "permissions-update",
+			"name": "permissions_update",
 			"text": "Do you have a process for updating badge information?",
 			"answers": [
 				"Yes",
@@ -156,10 +156,10 @@
 		},
 		{
 			"dependsOn": [
-				"permissions-update",
+				"permissions_update",
 				0
 			],
-			"name": "permissions-update-frequency",
+			"name": "permissions_update_frequency",
 			"text": "Frequency of audit?",
 			"answers": [
 				"Daily or Weekly Checks",
@@ -174,7 +174,7 @@
 				"permissions",
 				4
 			],
-			"name": "permissions-validity",
+			"name": "permissions_validity",
 			"text": "Badge validity period",
 			"answers": [
 				"Indefinite",
@@ -190,7 +190,7 @@
 				"permissions",
 				5
 			],
-			"name": "permissions-revokation",
+			"name": "permissions_revokation",
 			"text": "There is Badge Revocation Procedure?",
 			"answers": [
 				"Yes",
@@ -199,10 +199,10 @@
 		},
 		{
 			"dependsOn": [
-				"permissions-revokation",
+				"permissions_revokation",
 				0
 			],
-			"name": "permissions-revokation-recent",
+			"name": "permissions_revokation_recent",
 			"text": "Have there been any badge revocations recently?",
 			"answers": [
 				"Yes",
@@ -211,10 +211,10 @@
 		},
 		{
 			"dependsOn": [
-				"permissions-revokation-recent",
+				"permissions_revokation_recent",
 				0
 			],
-			"name": "kpi-respected",
+			"name": "kpi_respected",
 			"text": "Have the KPIs of the process been respected??",
 			"answers": [
 				"Yes",
@@ -224,7 +224,7 @@
 	],
 	"Security History": [
 		{
-			"name": "enterprise-size",
+			"name": "enterprise_size",
 			"text": "How big is your business?",
 			"answers": [
 				"Less than 10 employees",
@@ -235,7 +235,7 @@
 			]
 		},
 		{
-			"name": "enterprise-domain",
+			"name": "enterprise_domain",
 			"text": "What is your field?",
 			"answers": [
 				"Software Publisher,Industrial",
@@ -248,7 +248,7 @@
 			]
 		},
 		{
-			"name": "enterprise-security-level",
+			"name": "enterprise_security_level",
 			"text": "How do you rate your cybersecurity?",
 			"answers": [
 				"Lack of security measures",
@@ -260,10 +260,10 @@
 		},
 		{
 			"dependsOn": [
-				"enterprise-security-level",
+				"enterprise_security_level",
 				0
 			],
-			"name": "enterprise-security-incidents",
+			"name": "enterprise_security_incidents",
 			"text": "Existing Incident Reports",
 			"answers": [
 				"Yes",
@@ -272,11 +272,11 @@
 		},
 		{
 			"dependsOn": [
-				"enterprise-security-level",
+				"enterprise_security_level",
 				1,
 				2
 			],
-			"name": "enterprise-security-skills",
+			"name": "enterprise_security_skills",
 			"text": "Do you have in-house physical security skills?",
 			"answers": [
 				"Not at all",
@@ -286,12 +286,12 @@
 		},
 		{
 			"dependsOn": [
-				"enterprise-security-skills",
+				"enterprise_security_skills",
 				0,
 				1,
 				2
 			],
-			"name": "enterprise-security-awareness",
+			"name": "enterprise_security_awareness",
 			"text": "Are there information security awareness and training programs for employees?",
 			"answers": [
 				"No",
@@ -301,11 +301,11 @@
 		},
 		{
 			"dependsOn": [
-				"enterprise-size",
+				"enterprise_size",
 				3,
 				4
 			],
-			"name": "enterprise-security-management",
+			"name": "enterprise_security_management",
 			"text": "Is there a management-approved information security policy?",
 			"answers": [
 				"No approved",
@@ -314,11 +314,11 @@
 		},
 		{
 			"dependsOn": [
-				"enterprise-security-management",
+				"enterprise_security_management",
 				0,
 				1
 			],
-			"name": "enterprise-security-management-users",
+			"name": "enterprise_security_management_users",
 			"text": "Do you have a list of users and access to all your systems?",
 			"answers": [
 				"No",
@@ -327,7 +327,7 @@
 			]
 		},
 		{
-			"name": "enterprise-audit-price",
+			"name": "enterprise_audit_price",
 			"text": "Depending on your size, what is your idea of the budget for a tailor-made audit?",
 			"answers": [
 				"Between €15,000 and €30,000",

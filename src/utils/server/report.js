@@ -1,14 +1,14 @@
-export function generateMarkdownText(formData) {
+export function generateMarkdownText({ form }) {
 	let markdownText = "";
-	if (formData.form.doors === 1 && formData.form.critical === 1 && formData.form["security-type"] === 0) {
+	if (form.doors === 1 && form.critical === 1 && form.security_type === 0)
 		markdownText += `
 ## Physical Access
 
 Solution: A more robust system and advanced management features are needed to efficiently manage a larger number of doors.
 User management is becoming more complex. Advanced features such as user group management, granular permissions, and access schedules should be considered.
 A centralized system with an advanced user interface is often required to effectively manage access to multiple doors from a central displacement`;
-	}
-	if (formData.form.technology === 0 && formData.form["technology-1"] === 1 && formData.form.nfc === 0) {
+
+	if (form.technology === 0 && form.technology_1 === 1 && form.nfc === 0) {
 		markdownText += `
 ## Technology Information
 
@@ -17,7 +17,7 @@ NFC Type A offer reasonable storage capacity for storing credentials or access d
 In addition, outsourced storage service providers often invest in high-tech data centers
 `;
 	}
-	if (formData.form.permissions === 5 && formData.form["permissions-revokation"] === 0 && formData.form["permissions-revokation-recent"] === 0 && formData.form["kpi-respected"] === 0) {
+	if (form.permissions === 5 && form.permissions_revokation === 0 && form.permissions_revokation_recent === 0 && form.kpi_respected === 0) {
 		markdownText += `
 ## KPI and Permissions
 
