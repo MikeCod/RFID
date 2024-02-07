@@ -1,11 +1,5 @@
 export function generateMarkdownText(formData) {
-	let markdownText = `
-# User
-
-**Name :** ${formData.name}
-**Email :** ${formData.email}
-**Phone :** ${formData.phone}
-`;
+	let markdownText = "";
 	if (formData.form.doors === 1 && formData.form.critical === 1 && formData.form["security-type"] === 0) {
 		markdownText += `
 ## Physical Access

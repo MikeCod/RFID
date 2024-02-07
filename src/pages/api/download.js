@@ -10,15 +10,50 @@ export default async function (req, res) {
 		return result;
 
 	try {
+		const { profile } = result.props;
+		const { name, email, phone } = profile;
 		const pdfDoc = await PDFDocument.create();
 		const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 		const helveticaBoldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 		let textList = Server.generateMarkdownText(result.props.profile).split("\n").filter(l => typeof l === "string" && l.length !== 0);
 
+		let page = pdfDoc.addPage();
+		var { width, height } = page.getSize();
+		page.drawText("RFID Audit Report", {
+			x: 180,
+			y: height/2,
+			lineHeight: 32,
+			font: helveticaFont,
+			size: 28,
+			maxWidth: 400,
+			color: rgb(0.2, 0.45, 0.40)
+		});
+
+
+		page.drawText(`${name}\n${email}\n${phone}`, {
+			x: 40,
+			y: 120,
+			lineHeight: 20,
+			font: helveticaBoldFont,
+			size: 14,
+			maxWidth: 400,
+			color: rgb(0.1, 0.1, 0.1)
+		});
+
+		const date = new Date();
+		page.drawText(`${date.toDateString()}`, {
+			x: width - 160,
+			y: 80,
+			lineHeight: 32,
+			font: helveticaFont,
+			size: 13,
+			maxWidth: 400,
+			color: rgb(0.3, 0.3, 0.3)
+		});
+
 		for (let i = 0; i < textList.length;) {
-			const page = pdfDoc.addPage();
-			const { width, height } = page.getSize();
-			for (let j = 0; j < height; j += 20) {
+			page = pdfDoc.addPage();
+			for (let j = 0; j < height - 110; j += 20) {
 				if (typeof textList[i] === "string" && textList[i].length > 1) {
 					let text = textList[i];
 					const spacePos = text.indexOf(' ');
