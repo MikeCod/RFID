@@ -102,34 +102,31 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 ### Norms
 
-| Norm | NFC Tag Type | Description |
-|-|-|-|
-| NFCIP-1/2 (ISO/IEC 18092/21481) || Peer-to-Peer and Active Modes |
-| ISO/IEC 18000-2 || RFID 120-135 kHz |
-| ISO/IEC 18000-3 | *Any* | RFID for item management at 13,56 MHz |
-| ISO/IEC 18000-4 || RFID 860-960 MHz |
-| ISO/IEC 18000-6 || RFID 2,45 GHz |
-| ISO/IEC 14443 A/B | 1/2/4 | Proximity Cards (A and B) |
-| [JIS X6319-4](https://img.antpedia.com/standard/files/pdfs_ora/20240408/JIS%20X%206319-4-2016.pdf) | 3 | FeliCa (F) |
-| ISO/IEC 15693 | 5 | Vicinity Cards (V) |
-| NDEF (NFC Data Exchange Format) || Exchange payload format |
+| Norm | Description |
+|-|-|
+| NFCIP-1/2 (ISO/IEC 18092/21481) | Peer-to-Peer and Active Modes |
+| ISO/IEC 18000-2 | RFID 120-135 kHz |
+| ISO/IEC 18000-3 | RFID for item management at 13,56 MHz |
+| ISO/IEC 18000-4 | RFID 860-960 MHz |
+| ISO/IEC 18000-6 | RFID 2,45 GHz |
+| ISO/IEC 14443 A/B | Proximity Cards (A and B) |
+| [JIS X6319-4](https://img.antpedia.com/standard/files/pdfs_ora/20240408/JIS%20X%206319-4-2016.pdf) | FeliCa (F) |
+| ISO/IEC 15693 | Vicinity Cards (V) |
+| NDEF (NFC Data Exchange Format) | Exchange payload format |
 
 ### Coding & Modulation
 
-| Coding | Description | |
+| Coding | Description | Example |
 |-|-|-|
-| NRZ-L | Voltage changes directly with bit-value logic |
-| Manchester | Inverse voltage at the middle of the bit period |
-| Modified Miller | 1 is always represented by high to low. 0 is mapped according to the previous bit condition: if previous bit was 1, then it remains high, otherwise a low impulse occurs at the beginning |
-
-[Source](https://www.rfwireless-world.com/tutorials/other-wireless/nfc-modulation-explained)
+| NRZ-L | Voltage changes directly with bit-value logic | [<img src="asset/coding/nrz-l.webp" alt="NRZ-L" width="280" />](https://www.rfwireless-world.com/tutorials/other-wireless/nfc-modulation-explained) |
+| Manchester | Inverse voltage at the middle of the bit period | [<img src="asset/coding/manchester.webp" alt="Manchester" width="280" />](https://www.rfwireless-world.com/tutorials/other-wireless/nfc-modulation-explained) |
+| Modified Miller | 1 is always represented by high to low. 0 is mapped according to the previous bit condition: if previous bit was 1, then it remains high, otherwise a low impulse occurs at the beginning | [<img src="asset/coding/m-miller.webp" alt="Modified Miller" width="280" />](https://www.physicsforums.com/threads/decoding-miller-code-understanding-the-high-and-low-signals.979900/) |
 
 | Modulation | Description | |
 |-|-|-|
-| ASK 100% | The signal takes the full amplitude |
-| ASK 10% | The signal lower by 10% for 0 |
+| ASK 100% | The signal takes the full amplitude | [<img src="asset/modulation/ask-100.webp" alt="ASK 100%" width="480" /><p>Modified Miller</p>](https://www.rfwireless-world.com/terminology/modulation/10-percent-ask-vs-100-percent-ask-modulation) |
+| ASK 10% | The signal lower by 10% for 0 | [<img src="asset/modulation/ask-10.webp" alt="ASK 10%" width="480" /><p>NRZ-L</p>](https://www.rfwireless-world.com/terminology/modulation/10-percent-ask-vs-100-percent-ask-modulation) |
 
-[Source](https://www.rfwireless-world.com/terminology/modulation/10-percent-ask-vs-100-percent-ask-modulation)
 
 ### NFC Types
 
@@ -147,6 +144,7 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 |                         | **NFC Type A**                        | **NFC Type B**                        | **NFC Type F (FeliCa)**             | **NFC Type V (ISO 15693)**      |
 | ----------------------- | ------------------------------------- | ------------------------------------- | ----------------------------------- | ------------------------------- |
 | **Standard**            | ISO/IEC 14443-A                                     | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
+| **NFC Tag Type**        | 1                                                   | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
 | **Latency**             | Low                                                 | Low                             | Very low                            | Moderate                        |
 | **Security**            | Depends on chip (e.g. MIFARE DESFire)               | Depends on chip (e.g. CAC, PIV) | High (built-in crypto, mutual auth) | Moderate (can support password) |
 | **Main Use Cases**      | Access control, Payments, Government ID, Healthcare | Transports                      | Transit, Mobile payments, Access    | Industrial tracking, Libraries  |
@@ -197,6 +195,50 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 #### Reverse Engineering
 
 #### Tracking
+
+### Devices
+
+| Device                    | Type      | Read    | Write/Save/Emulate | Primary Use | Relay | MFKey32 - Nonce Reuse | Jamming | Power Analysis | Reverse Engineering | Price |
+| ------------------------- | --------- | --------------- | ---------- | :---------: | :---: | :-------------------: | :-----: | :------------: | :-----------------: | :---  |
+| **Flipper Zero**          | RFID, NFC | A, B, F, V      | A, F       | Replay      | ❌    | ✅                    | ❌      | ❌             | ❌                  | [190-300€](https://lab401.com/products/flipper-zero)  |
+| **Proxmark3**             | CSC       | A, B, F, V      | A, B, F, V | RE          | ✅    | ✅                    | ⚠️      | ⚠️2            | ✅                  | [300-500€](https://lab401.com/products/proxmark-3-rdv4)  |
+| **HydraNFC v2**           | CSC       | A, B, F, V      | A, B, F, V | RE          | ✅    | ✅                    | ❌      | ⚠️2            | ✅                  | [290€](https://hydrabus.com/product/hydrabus-v1-0-rev1-5-hydranfc-shield-v2-r1-5/?v=82a9e4d26595)  |
+| **Android Smartphone**    | NFC       | A, B, F         | A, B, F    | -           | ⚠️1   | ❌                    | ❌      | ❌             | ⚠️1                 | - |
+| **Tastic RFID Thief**     | RFID, NFC | ✅              | ✅         | Clone       | ❌    | ❌                    | ❌      | ❌             | ❌                  | [30€](https://cyborg.ksecsolutions.com/product/esp-rfid-tool/)  |
+| [**Chameleon Mini/Ultra**][1] | RFID, CSC | RFID, A (MIFARE Classic/Ultralight) |  | RE | ❌  | ❌                 | ❌      | ❌             | ✅                  | [130€](https://lab401.com/products/chameleon-ultra)  |
+| **ICopy XS**              | RFID, CSC | RFID, A, B, V | RFID, A, B, V | Replay     | ❌    | ✅                    | ❌      | ❌             | ❌                  | [375€](https://icopyx.com/)  |
+| [**RFIDler**][2]          | 125-134 KHz | ✅            | ✅         | Replay      | ❌    | ❌                    | ❌      | ❌             | ✅                  | [95€](http://rfidiot.org/#Hardware) |
+| **Frosch Hitag**          | RFID      | Hitag 1/2/S     | ✅         | RE          | ❌    | ❌                    | ❌      | ❌             | ✅                  | [165-180€](http://rfidiot.org/#Hardware) |
+| **UV30 UHF/VHF Jammer**   | 140-480 MHz | ❌            | ❌         | Jamming     | ❌    | ❌                    | ✅      | ❌             | ❌                  |
+| **All Frequency Jammer**  | GSM, 140-868MHz | ❌        | ❌         | Jamming     | ❌    | ❌                    | ✅      | ❌             | ❌                  |
+| **RFMAX Power Mapper**    | 850-920 MHz | ❌            | ❌         | Power Analysis | ❌ | ❌                    | ❌      | ✅             | ❌                  |
+
+- **RFID is written for 125 kHz specifally devices. CSC is written instead of NFC when encryption, decryption, or cracking is supported*
+- *1: See [NFCGate](#software)*
+- *2: See [Advanced devices](advanced-devices.md)*
+
+[1]: https://github.com/RfidResearchGroup/ChameleonUltra "Chameleon Ultra"
+[2]: https://github.com/AdamLaurie/RFIDler "RFIDler"
+
+[RFIDIOt](http://rfidiot.org/#Hardware)
+
+### Software
+| Software/Application                     | Platform | Type | Read     | Emulate   | Relay | MFKey32 - Nonce Reuse | Jamming | Power Analysis | Reverse Engineering |
+| ---------------------------------------- | -------- | ---- | -------- | --------- | ----- | --------------------- | ------- | -------------- | ------------------- |
+| [**NFCGate**][1]                         | Android  | CSC  | A, B, F  | A, B, F   | ✅    | ❌                    | ❌       | ❌              | ✅                |
+| [**Keysight 89600 VSA Software**][2]     | Windows  | NFC  | A, B, V  | ❌        | ❌    | ❌                    | ❌       | ✅              | ❌                |
+
+[1]: https://github.com/nfcgate/nfcgate "NFCGate"
+[2]: https://www.keysight.com/gb/en/lib/software-detail/computer-software/io-libraries-suite-downloads-2175637.html "Keysight IO Libraries Suite"
+[3]: https://www.keysight.com/gb/en/assets/7018-06909/technical-overviews/5992-4223.pdf "RFID Modulation Analysis Technical Overview"
+
+## Defense
+
+| Software/Application                                      |
+| --------------------------------------------------------- |
+| **RSA/RFID Blocker Tag/Guardian**       |
+| **VaultCard**             |
+
 
 
 ## Contributors
