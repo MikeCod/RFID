@@ -133,16 +133,26 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 ### NFC Types
 
-| Type | Mode | Coding | Modulation | Speed | Use Case |
-|:-:|-|-|-|-|-|
+| Type | Mode | Coding | Modulation | Speed |
+|:-:|-|-|-|-|
 | A | *Polling*   | Modified Miller | ASK 100%      | 106 kbps |
 |   | *Listening* | Manchester      | *Load (ASK)*  | 106 kbps |
 | B | *Polling*   | NRZ-L           | ASK 10%       | 106 ~ 848 kbps |
 |   | *Listening* | NRZ-L           | *Load (BPSK)* | 106 ~ 848 kbps |
-| F | *Polling*   | Manchester      | ASK 10%       | 212 kbps |
-|   | *Listening* | Manchester      | *Load (BPSK)* | 212 kbps |
-| V | *Polling*   | Manchester      | ASK 10%       | 6 ~ 53 kbps |
-|   | *Listening* | Manchester      | *Load (ASK)*  | 6 ~ 53 kbps |
+| F | *Polling*   | Manchester      | ASK 10%       | 212 ~ 424 kbps | 
+|   | *Listening* | Manchester      | *Load (BPSK)* | 212 ~ 424 kbps |
+| V | *Polling*   | Manchester      | ASK 10%       | 26 ~ 53 kbps |
+|   | *Listening* | Manchester      | *Load (ASK)*  | 26 ~ 53 kbps |
+
+|                         | **NFC Type A**                        | **NFC Type B**                        | **NFC Type F (FeliCa)**             | **NFC Type V (ISO 15693)**      |
+| ----------------------- | ------------------------------------- | ------------------------------------- | ----------------------------------- | ------------------------------- |
+| **Standard**            | ISO/IEC 14443-A                                     | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
+| **Latency**             | Low                                                 | Low                             | Very low                            | Moderate                        |
+| **Security**            | Depends on chip (e.g. MIFARE DESFire)               | Depends on chip (e.g. CAC, PIV) | High (built-in crypto, mutual auth) | Moderate (can support password) |
+| **Main Use Cases**      | Access control, Payments, Government ID, Healthcare | Transports                      | Transit, Mobile payments, Access    | Industrial tracking, Libraries  |
+| **Dominant Regions**    | Worldwide                                           | Europe, U.S. Government        | Japan, Hong Kong, Taiwan            | Europe, Industry (global)       |
+| **Key Products**        | MIFARE Classic, DESFire, Ultralight                 | CAC cards, ePassports (ICAO)   | Suica, Octopus, Edy, nanaco         | Tag-it, ICODE, ST25             |
+
 
 ## Transaction Functioning
 
