@@ -42,11 +42,11 @@ RFID is actually on many frequency bands.
 <!-- https://en.wikipedia.org/wiki/Box-drawing_characters -->
 NFC is rooted in RFID, and Contactless Smartcard in NFC.
 ```
-╔═════════════╗     ╔═════════════╗
-║    RFID     ║     ║  Smartcard  ║
-╚══════╤══════╝     ╚══════╤══════╝
-       │                   │
-	   v                   v
+╔═════════════╗     
+║    RFID     ║     
+╚══════╤══════╝     
+       │                   
+       v                   
 ╔═════════════╗     ╔═════════════╗
 ║     NFC     ║     ║  Smartcard  ║
 ╚══════╤══════╝     ╚══════╤══════╝
