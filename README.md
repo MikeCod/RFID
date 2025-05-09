@@ -110,7 +110,7 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 | ISO/IEC 18000-4 | RFID 860-960 MHz |
 | ISO/IEC 18000-6 | RFID 2,45 GHz |
 | ISO/IEC 14443 A/B | Proximity Cards (A and B) |
-| [JIS X6319-4](https://img.antpedia.com/standard/files/pdfs_ora/20240408/JIS%20X%206319-4-2016.pdf) | FeliCa (F) |
+| [JIS X6319-4](https://img.antpedia.com/standard/files/pdfs_ora/20240408/JIS%20X%206319-4-2016.pdf) | Felicity Card / FeliCa (F) |
 | ISO/IEC 15693 | Vicinity Cards (V) |
 | NDEF (NFC Data Exchange Format) | Exchange payload format |
 
@@ -141,7 +141,7 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 | V | *Polling*   | Manchester      | ASK 10%       | 26 ~ 53 kbps |
 |   | *Listening* | Manchester      | *Load (ASK)*  | 26 ~ 53 kbps |
 
-|                         | **Proximity Card A**                        | **Proximity Card B**                        | **FeliCa Card**             | **Vicinity Card**      |
+|                         | **Proximity Card A**                        | **Proximity Card B**                        | **Felicity Card (FeliCa)**             | **Vicinity Card**      |
 | ----------------------- | ------------------------------------- | ------------------------------------- | ----------------------------------- | ------------------------------- |
 | **Standard**            | ISO/IEC 14443-A                                     | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
 | **NFC Tag Type**        | 1                                                   | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
