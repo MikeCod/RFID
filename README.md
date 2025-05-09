@@ -1,4 +1,4 @@
-# RFID vulnerabilities
+# 📡 RFID vulnerabilities 🏧💳
 
 ## Overview
 
@@ -29,13 +29,13 @@ We use RFID technologies very often in our daily life, without us realizing it.
 ## What type of RFID exist ?
 
 RFID is actually on many frequency bands.
-| Band | Regulations | Range | Cas d’utilisation |
+| Abbrv | Band | Regulations | Range | Cas d’utilisation |
 |---|---|---|---|
-| **LF: 120–150 kHz** | ***Unregulated*** | **10 cm** | **Animal identification, and some identification cards** |
-| **HF: 13.56 MHz** | **ISM band worldwide** | **0.1 – 1 m** | **Most frequently used. Include Smartcards and NFC** |
-| UHF: 433 MHz | Short range devices | 1 – 100 m | Military area |
-| UHF: 865–868 MHz (EU) 902–928 MHz (NA) | ISM band | 1 – 12 m | Used by railroads |
-| UHF-SHF: 2450–5800 MHz | ISM band | 1 – 2 m | 802.11 WLAN, Bluetooth standards |
+| **LF** | **120–150 kHz** | ***Unregulated*** | **10 cm** | **Animal identification, and some identification cards** |
+| **HF** | **13.56 MHz** | **ISM band worldwide** | **0.1 – 1 m** | **Most frequently used. Include Smartcards and NFC** |
+| UHF | 433 MHz | Short range devices | 1 – 100 m | Military area |
+| UHF | 865–868 MHz (EU) 902–928 MHz (NA) | ISM band | 1 – 12 m | Used by railroads |
+| UHF-SHF | 2450–5800 MHz | ISM band | 1 – 2 m | 802.11 WLAN, Bluetooth standards |
 
 *[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
 
@@ -141,7 +141,7 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 | V | *Polling*   | Manchester      | ASK 10%       | 26 ~ 53 kbps |
 |   | *Listening* | Manchester      | *Load (ASK)*  | 26 ~ 53 kbps |
 
-|                         | **NFC Type A**                        | **NFC Type B**                        | **NFC Type F (FeliCa)**             | **NFC Type V (ISO 15693)**      |
+|                         | **Proximity Card A**                        | **Proximity Card B**                        | **FeliCa Card**             | **Vicinity Card**      |
 | ----------------------- | ------------------------------------- | ------------------------------------- | ----------------------------------- | ------------------------------- |
 | **Standard**            | ISO/IEC 14443-A                                     | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
 | **NFC Tag Type**        | 1                                                   | ISO/IEC 14443-B                 | JIS X 6319-4 / ISO/IEC 18092        | ISO/IEC 15693                   |
