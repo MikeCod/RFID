@@ -30,7 +30,7 @@ We use RFID technologies very often in our daily life, without us realizing it.
 
 RFID is actually on many frequency bands.
 | Abbrv | Band | Regulations | Range | ISO/IEC 18000 | Use Case |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | **LF** | **120–150 kHz** | ***Unregulated*** | **10 cm** | **ISO/IEC 18000-2** | **Animal identification, and some identification cards** |
 | **HF** | **13.56 MHz** | **ISM band worldwide** | **0.1 – 1 m** | **ISO/IEC 18000-3** | **Most frequently used. Include Smartcards and NFC** |
 | UHF | 433 MHz | Short range devices | 1 – 100 m | **ISO/IEC 18000-7** | Military area |
