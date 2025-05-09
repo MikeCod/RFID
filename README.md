@@ -29,13 +29,13 @@ We use RFID technologies very often in our daily life, without us realizing it.
 ## What type of RFID exist ?
 
 RFID is actually on many frequency bands.
-| Abbrv | Band | Regulations | Range | Use Case |
+| Abbrv | Band | Regulations | Range | ISO/IEC 18000 | Use Case |
 |---|---|---|---|---|
-| **LF** | **120–150 kHz** | ***Unregulated*** | **10 cm** | **Animal identification, and some identification cards** |
-| **HF** | **13.56 MHz** | **ISM band worldwide** | **0.1 – 1 m** | **Most frequently used. Include Smartcards and NFC** |
-| UHF | 433 MHz | Short range devices | 1 – 100 m | Military area |
-| UHF | 865–868 MHz (EU) 902–928 MHz (NA) | ISM band | 1 – 12 m | Used by railroads |
-| UHF-SHF | 2450–5800 MHz | ISM band | 1 – 2 m | 802.11 WLAN, Bluetooth standards |
+| **LF** | **120–150 kHz** | ***Unregulated*** | **10 cm** | **ISO/IEC 18000-2** | **Animal identification, and some identification cards** |
+| **HF** | **13.56 MHz** | **ISM band worldwide** | **0.1 – 1 m** | **ISO/IEC 18000-3** | **Most frequently used. Include Smartcards and NFC** |
+| UHF | 433 MHz | Short range devices | 1 – 100 m | **ISO/IEC 18000-7** | Military area |
+| UHF | 865–868 MHz (EU) 902–928 MHz (NA) | ISM band | 1 – 12 m | **ISO/IEC 18000-6** | Used by railroads |
+| UHF-SHF | 2450–5800 MHz | ISM band | 1 – 2 m | **ISO/IEC 18000-4** | 802.11 WLAN, Bluetooth standards |
 
 *[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
 
