@@ -30,15 +30,18 @@ We use RFID technologies very often in our daily life, without us realizing it.
 ## What type of RFID exist ?
 
 RFID is actually on many frequency bands.
-| Abbrv | Band | Regulations | Range | ISO/IEC 18000 | Use Case |
-|---|---|---|---|---|---|
-| **LF** | **125 ~ 148 kHz** | ***Unregulated*** | **10 ~ 50 cm** | **Part 2** | **<ul><li>Identification Cards (125 kHz)</li><li>Animal identification (134.2 kHz)</li></ul>** |
-| **HF** | **13.56 MHz** | **ISM band worldwide** | **0.1 ~ 1 m** | **Part 3** | **Most frequently used. Include Smartcards and NFC** |
-| UHF | 433 MHz | Short range devices | 1 ~ 100 m | Part 7 | <ul><li>Supplychain</li><li>Warehouse management</li><li>Military area</li></ul> |
-| UHF | 865 ~ 868 MHz (EU)<br/>902–928 MHz (NA) | ISM band | 1 ~ 12 m | Part 6 | <ul><li>EAN codes</li><li>Railroads</li><li>Remote-control</li><li>Electronic Article Surveillance (RF EAS)</li></ul> |
-| UHF-SHF | 2.45 ~ 5.8 GHz | ISM band | 1 ~ 2 m | Part 4 | <ul><li>Electronic toll collection</li><li>Railroads</li><li>802.11 WLAN</li><li>Bluetooth</li></ul> |
+| Abbrv | Band | Regulations | Typical Range | Max Range | ISO/IEC 18000 | Use Case |
+|---|---|---|:---:|:---:|:---:|---|
+| **LF** | **120 ~ 148 kHz** | ***Unregulated*** | **10cm** | **50 cm** | **Part 2** | **<ul><li>Identification Cards (125 kHz)</li><li>Animal identification (134.2 kHz)</li></ul>** |
+| **HF** | **13.56 MHz** | **ISM band worldwide** | **10cm** | **1 m** | **Part 3** | **Most frequently used. Include Smartcards and NFC** |
+| UHF | 433 MHz | Short range devices | *2m* | 100 m | Part 7 | <ul><li>Supplychain</li><li>Warehouse management</li><li>Military area</li></ul> |
+| UHF | 865 ~ 868 MHz (EU)<br/>902–928 MHz (NA) | ISM band | 3m | 40 m | Part 6 | <ul><li>EAN codes</li><li>Railroads</li><li>Remote-control</li><li>Electronic Article Surveillance (RF EAS)</li></ul> |
+| UHF-SHF | 2.45 ~ 5.8 GHz | ISM band | 15m | 90 m | Part 4 | <ul><li>Electronic toll collection</li><li>Railroads</li><li>802.11 WLAN</li><li>Bluetooth</li></ul> |
 
 *[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
+https://homey.app/en-us/wiki/433-mhz/
+
+![mindmap](asset/mindmap.png)
 
 <!-- https://en.wikipedia.org/wiki/Box-drawing_characters -->
 NFC is rooted in RFID, and Contactless Smartcard in NFC.
