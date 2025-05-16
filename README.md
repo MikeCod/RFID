@@ -196,17 +196,17 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 | **Difficulty** | **Description** |
 |:---:|---|
-| 1 | Isn't very expensive (<500€), and doesn't require any expertise |
-| 2 | Is expensive (>500€) and requires more expertise |
-| 3 | Is very expensive (>2500€) and requires genuine expertise |
+| 1 - Easy | Isn't very expensive (<500€), and doesn't require any expertise |
+| 2 - Medium | Is expensive (>500€) and requires more expertise |
+| 3 - Hard | Is very expensive (>2500€) and requires genuine expertise |
 | **Harmfulness** |
-| 0 | Isn't harmful for the client |
-| 1 | Impact client's integrity/privacy |
-| 2 | Impact client's interests/ownership |
+| 0 - None | Isn't harmful for the client |
+| 1 - Medium | Impact client's integrity/privacy |
+| 2 - High | Impact client's interests/ownership |
 | **Defendable** |
-| 0 | Isn't defendable |
-| 1 | Isn't completely defendable. Protections exist but they may not be very effective or are insufficients |
-| 2 | Protection fully effective |
+| 0 - No | Isn't defendable |
+| 1 - Somewhat | Isn't completely defendable. Protections exist but they may not be very effective or are insufficients |
+| 2 - Yes | Protection fully effective |
 
 ## Devices
 
