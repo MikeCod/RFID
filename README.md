@@ -184,27 +184,29 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 ## Techniques
 
-| Attack | Objective | Description | Difficulty 1-3 | Harmfulness 1-3 | Scheme |
-|---|:---:|---|:---:|:---:|:---:|
-| Clone/Replay | Spoof | Clone/copy signal, to replay later | 1 | 3 |
-| Relay | Steal | Relay the signal/ messages without altering them, to unlock or execute unwanted actions | 2 | 3 |
-| Nonce Reuse / Mfkey32 | Spoof | Crack the key when 2 same nonces are used to encrypt different messages | 2 | 3 |
-| Jamming | | Prevent a service to be used by producing a signal on the same frequency | 1 | 1 |
-| Power Analysis | Spoof | The power supplied gives information about its instructions and data | 3 | 3 |
-| Reverse Engineering | Research/Spoof | | 3 | 3 |
-| Tracking | |  | 3 | 2 |
+| Attack | Objective | Description | Difficulty 1-3 ↑ | Defendable 0-2 ↑ | Harmfulness 0-2 ↓ | Scheme |
+|---|:---:|---|:---:|:---:|:---:|:---:|
+| Clone/Replay | Spoof | Clone/copy signal, to replay later | 1 | 2 | 2 |
+| Relay | Steal | Relay the signal/ messages without altering them, to unlock or execute unwanted actions | 2 | 0 | 2 |
+| Nonce Reuse / Mfkey32 | Spoof | Crack the key when 2 same nonces are used to encrypt different messages | 2 | 2 | 2 |
+| Jamming | | Prevent a service to be used by producing a signal on the same frequency | 1 | 1 | 0 |
+| Power Analysis | Spoof | The power supplied gives information about its instructions and data | 3 | 1 | 2 |
+| Reverse Engineering | Research/Spoof | | 3 | 1 | 2 |
+| Tracking | |  | 3 | 1 | 1 |
 
-| Difficulty | Description |
+| **Difficulty** | **Description** |
 |:---:|---|
 | 1 | Isn't very expensive (<500€), and doesn't require any expertise |
 | 2 | Is expensive (>500€) and requires more expertise |
-| 3 | Is very expensive (>2000€) and requires genuine expertise |
-
-| Harmfulness | Description |
-|:---:|---|
-| 1 | Isn't harmful for the client |
-| 2 | Impact client's integrity/privacy |
-| 3 | Impact client's interests/ownership |
+| 3 | Is very expensive (>2500€) and requires genuine expertise |
+| **Harmfulness** |
+| 0 | Isn't harmful for the client |
+| 1 | Impact client's integrity/privacy |
+| 2 | Impact client's interests/ownership |
+| **Defendable** |
+| 0 | Isn't defendable |
+| 1 | Isn't completely defendable. Protections exist but they may not be very effective or are insufficients |
+| 2 | Protection fully effective |
 
 ## Devices
 
