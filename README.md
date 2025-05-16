@@ -38,8 +38,8 @@ RFID is actually on many frequency bands.
 | UHF | 865 ~ 868 MHz (EU)<br/>902–928 MHz (NA) | ISM band | 3m | 40 m | Part 6 | <ul><li>EAN codes</li><li>Railroads</li><li>Remote-control</li><li>Electronic Article Surveillance (RF EAS)</li></ul> |
 | UHF-SHF | 2.45 ~ 5.8 GHz | ISM band | 15m | 90 m | Part 4 | <ul><li>Electronic toll collection</li><li>Railroads</li><li>802.11 WLAN</li><li>Bluetooth</li></ul> |
 
-*[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification)*
-https://homey.app/en-us/wiki/433-mhz/
+*[Source](https://en.wikipedia.org/wiki/Radio-frequency_identification), 
+[433MHz](https://homey.app/en-us/wiki/433-mhz/)*
 
 ![mindmap](asset/mindmap.png)
 
@@ -104,9 +104,9 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 [ATQ, SAK and ATS can be used to identify the manufacturer and product.](https://nfc-tools.github.io/resources/standards/iso14443A/)
 
-### Norms
+### Standards
 
-| Norm | Description |
+| Standard | Description |
 |-|-|
 | NFCIP-1/2 (ISO/IEC 18092/21481) | Peer-to-Peer and Active Modes |
 | ISO/IEC 18000-2 | RFID 120-135 kHz |
@@ -184,29 +184,30 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 ## Techniques
 
-| Attack | Objective | Description | Difficulty 1-3 ↑ | Defendable 0-2 ↑ | Harmfulness 0-2 ↓ | Scheme |
+| Attack | Objective | Description | Difficulty 1-3 ↑ | Defendable 0-2 ↑ | Harmfulness 0-3 ↓ | Scheme |
 |---|:---:|---|:---:|:---:|:---:|:---:|
-| Clone/Replay | Spoof | Clone/copy signal, to replay later | 1 | 2 | 2 |
+| Clone/Replay | Spoof | Clone/copy signal, to replay later | 1 | 2 | 3 |
 | Relay | Steal | Relay the signal/ messages without altering them, to unlock or execute unwanted actions | 2 | 0 | 2 |
-| Nonce Reuse / Mfkey32 | Spoof | Crack the key when 2 same nonces are used to encrypt different messages | 2 | 2 | 2 |
+| Nonce Reuse / Mfkey32 | Spoof | Crack the key when 2 same nonces are used to encrypt different messages | 2 | 2 | 3 |
 | Jamming | | Prevent a service to be used by producing a signal on the same frequency | 1 | 1 | 0 |
-| Power Analysis | Spoof | The power supplied gives information about its instructions and data | 3 | 1 | 2 |
-| Reverse Engineering | Research/Spoof | | 3 | 1 | 2 |
+| Power Analysis | Spoof | The power supplied gives information about its instructions and data | 3 | 1 | 3 |
+| Reverse Engineering | Research/Spoof | | 3 | 1 | 3 |
 | Tracking | |  | 3 | 1 | 1 |
 
 | **Difficulty** | **Description** |
-|:---:|---|
+|:---|---|
 | 1 - Easy | Isn't very expensive (<500€), and doesn't require any expertise |
 | 2 - Medium | Is expensive (>500€) and requires more expertise |
 | 3 - Hard | Is very expensive (>2500€) and requires genuine expertise |
 | **Harmfulness** |
 | 0 - None | Isn't harmful for the client |
 | 1 - Medium | Impact client's integrity/privacy |
-| 2 - High | Impact client's interests/ownership |
+| 2 - High | Ephemeral impact on client's interests/ownership |
+| 3 - Critical | Long-term impact on client's interests/ownership |
 | **Defendable** |
 | 0 - No | Isn't defendable |
 | 1 - Somewhat | Isn't completely defendable. Protections exist but they may not be very effective or are insufficients |
-| 2 - Yes | Protection fully effective |
+| 2 - Yes | Protections are fully effective |
 
 ## Devices
 
