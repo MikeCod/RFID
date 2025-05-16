@@ -1,0 +1,11 @@
+sequenceDiagram
+    actor C as Client
+    participant I as Intermediate Attacker
+    participant S as Legitimate Server
+    
+    C->>I: Request
+    I->>S: Request
+    S->>I: Challenge
+    I->>C: Challenge
+    C->>I: Challenge solution
+    I->>S: Challenge solution
