@@ -1,0 +1,18 @@
+flowchart TD
+    app[Application] --> animal["Animal Identification"] & supplychain["Supplychain or Warehouse management"] 
+    
+    region[Region] --> EU[Europe] & US[U.S.] & JHT[Japan, Hong Kong, Tawain] & Other
+    EU & US --> B
+    EU --> V
+    JHT --> F
+
+    sec[Needed Security] --> auth(["Needs authentication"]) --> |Yes| high["High Security"]
+    auth --> |No| human(["Intended for human identification"])
+
+    human --> |Yes| trust(["You trust each other<br/>OR<br/>A theft couldn't be very harmful"])
+    human --> |No<br/>Animal or item identification| low
+    trust --> |No| medium["Average Security"]
+    trust --> |Yes| low["Low Security"]
+    
+    range[Range] --> |"By hand"| short["10cm"]
+    range --> |"Automatic Gate (e.g car, bicycle)"| long["2m"]
