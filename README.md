@@ -45,20 +45,12 @@ RFID is actually on many frequency bands.
 
 <!-- https://en.wikipedia.org/wiki/Box-drawing_characters -->
 NFC is rooted in RFID, and Contactless Smartcard in NFC.
-```
-╔═════════════╗     
-║    RFID     ║     
-╚══════╤══════╝     
-       │                   
-       v                   
-╔═════════════╗     ╔═════════════╗
-║     NFC     ║     ║  Smartcard  ║
-╚══════╤══════╝     ╚══════╤══════╝
-       └─────────┬─────────┘
-                 v
- ╔═══════════════════════════════╗
- ║  CSC (Contactless Smartcard)  ║
- ╚═══════════════════════════════╝
+```mermaid
+flowchart TD
+    subgraph RFID
+        NFC
+    end
+    Smartcard & RFID --> CSC["CSC (Contactless Smartcard)"]
 ```
 
 | Feature | RFID | NFC | CSC |
@@ -158,16 +150,13 @@ NFC is rooted in RFID, and Contactless Smartcard in NFC.
 
 ## Transaction Functioning
 
-```md
-╔════════════╗                              ╔════════════╗
-║            ║ REQ ───────────────────────> ║            ║
-║            ║ <───────────────── ATQ + SAK ║            ║
-║            ║                              ║            ║
-║   Reader   ║ *If ATQ + SAK is valid:*     ║    PICC    ║
-║            ║                              ║            ║
-║            ║ RATS ──────────────────────> ║            ║
-║            ║ <─────────────────────── ATS ║            ║
-╚════════════╝                              ╚════════════╝
+```mermaid
+sequenceDiagram
+    PCD->>PICC: REQ[X]
+    PICC->>PCD: ATQ[X] + SAK
+    Note right of PCD: *If ATQ[X] + SAK is valid, continue*
+    PCD->>PICC: RATS
+    PICC->>PCD: ATS
 ```
 
 ### Glossary
