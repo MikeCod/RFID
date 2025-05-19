@@ -1,6 +1,23 @@
 flowchart TD
-    app[Application] --> animal["Animal Identification"] & supplychain["Supplychain or Warehouse management"] 
+    military["Military"]
+    railroad["Railroads"]
+    payment["Payment"]
     
+    appType["Identification Type"] --> item & human & military & railroad & payment
+    subgraph item["Item"]
+        supplychain["Supplychain and Warehouse"]
+        rfeas["RF EAS"]
+        rks["Remote Keyless System"]
+    end
+    subgraph human["Human"]
+        transport["Transports"]
+        building["Corporate & Building Pass"]
+        toll["Tollway & Car Identification"]
+        student["Student Card"]
+        id["ID Card"]
+        otherAccess["Other Access"]
+    end
+
     region[Region] --> EU[Europe] & US[U.S.] & JHT[Japan, Hong Kong, Tawain] & Other
     EU & US --> B
     EU --> V
